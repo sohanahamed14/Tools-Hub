@@ -68,24 +68,41 @@
 
   <!-- Main Container -->
   <main class="app-main">
-    <!-- HOME DASHBOARD: All 4 Categories & 11 Tools Showcase -->
+    <!-- HOME DASHBOARD: Ultra-Modern Showcase -->
     <section class="tool-panel active" id="panel-home" role="tabpanel">
       <div class="home-dashboard">
-        <!-- Hero Header -->
+
+        <!-- Animated Ambient Orbs -->
+        <div class="home-orbs" aria-hidden="true">
+          <div class="orb orb-1"></div>
+          <div class="orb orb-2"></div>
+          <div class="orb orb-3"></div>
+        </div>
+
+        <!-- Hero Header: Premium Typography -->
         <div class="home-hero">
-          <span class="hero-chip">⚡ 11 VIRAL CREATOR TOOLS • ZERO SERVERS • 100% PRIVACY</span>
-          <h2 class="hero-title">Create Viral Content 10x Faster with In-Browser AI Tools</h2>
+          <div class="hero-version-row">
+            <span class="hero-version-pill">
+              <span class="hero-pulse-dot"></span>
+              v2.0 — Open Source
+            </span>
+            <span class="hero-stat-pill">🛡️ Zero Server Uploads</span>
+          </div>
+          <h2 class="hero-title">
+            The <span class="hero-gradient-word">Ultimate</span> Viral<br>Creator Toolkit
+          </h2>
           <p class="hero-subtitle">
-            The complete creator stack: auto jump-cut talking-head videos, dynamic Hormozi subtitles,
-            studio mic dynamics, viral soundboards, MrBeast neon thumbnails, and feed simulators.
+            11 professional-grade tools for video, audio, thumbnails & images — all running 100% client-side in your browser with instant exports.
           </p>
         </div>
 
         <!-- Live Search & Category Filter Bar -->
         <div class="home-filter-section">
           <div class="home-search-bar">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="home-search-input" class="home-search-input" placeholder="Search 11 viral creator tools (e.g. silence stripper, soundboard, teleprompter, mrbeast glow, title scorer)...">
+            <span class="search-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" id="home-search-input" class="home-search-input" placeholder="Search tools — silence stripper, soundboard, mrbeast glow, title scorer...">
             <kbd class="search-shortcut">⌘K</kbd>
           </div>
           <div class="home-category-pills">
@@ -97,15 +114,39 @@
           </div>
         </div>
 
-        <!-- 4-Category Cards Grid -->
+        <!-- Live Stat Counters Row -->
+        <div class="home-stats-row">
+          <div class="stat-box">
+            <span class="stat-number">11</span>
+            <span class="stat-label">Pro Tools</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Server Uploads</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Export Formats</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-box">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Free Forever</span>
+          </div>
+        </div>
+
+        <!-- 4-Category Bento Grid -->
         <div class="home-cards-grid">
           <!-- Card 1: Video Retention & Social -->
           <div class="tool-card" data-category="video">
             <div class="tool-card-glow glow-purple"></div>
+            <div class="card-accent-line accent-purple"></div>
             <div class="tool-card-header">
               <div class="tool-card-icon icon-purple">🎬</div>
               <div>
-                <span class="chip chip-purple">Category 1: Video Retention</span>
+                <span class="card-tag tag-purple">VIDEO · 4 TOOLS</span>
                 <h3 class="tool-card-title">OpusReel Studio</h3>
               </div>
             </div>
@@ -118,18 +159,20 @@
               <li><span>✓</span> <strong>Teleprompter Pro</strong>: Floating transparent scrolling prompter</li>
               <li><span>✓</span> <strong>OpusReel</strong>: 9:16 reframe & bouncing viral word captions</li>
             </ul>
-            <button class="btn-primary btn-block tool-launch-btn" data-launch="tab-opus">
-              Launch Video Suite →
+            <button class="btn-card-launch tool-launch-btn" data-launch="tab-opus">
+              <span>Launch Video Suite</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
 
           <!-- Card 2: Audio & Voice Magic -->
           <div class="tool-card" data-category="audio">
             <div class="tool-card-glow glow-cyan"></div>
+            <div class="card-accent-line accent-cyan"></div>
             <div class="tool-card-header">
               <div class="tool-card-icon icon-cyan">🎙️</div>
               <div>
-                <span class="chip chip-green">Category 2: Audio & Voice</span>
+                <span class="card-tag tag-cyan">AUDIO · 3 TOOLS</span>
                 <h3 class="tool-card-title">AudioMagic Studio</h3>
               </div>
             </div>
@@ -142,18 +185,20 @@
               <li><span>✓</span> <strong>Noise Gate</strong>: Auto-mutes room background hiss</li>
               <li><span>✓</span> <strong>Viral Soundboard</strong>: Vine Booms, Cha-Ching, Airhorns & Whooshes</li>
             </ul>
-            <button class="btn-accent btn-block tool-launch-btn" data-launch="tab-audio">
-              Launch Audio Suite →
+            <button class="btn-card-launch tool-launch-btn" data-launch="tab-audio">
+              <span>Launch Audio Suite</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
 
           <!-- Card 3: Viral Packaging & Growth -->
           <div class="tool-card" data-category="growth">
             <div class="tool-card-glow glow-amber"></div>
+            <div class="card-accent-line accent-amber"></div>
             <div class="tool-card-header">
               <div class="tool-card-icon icon-amber">🔥</div>
               <div>
-                <span class="chip chip-green">Category 3: Viral Packaging</span>
+                <span class="card-tag tag-amber">GROWTH · 2 TOOLS</span>
                 <h3 class="tool-card-title">ThumbForge & Scorer</h3>
               </div>
             </div>
@@ -166,19 +211,21 @@
               <li><span>✓</span> <strong>Feed Simulator</strong>: YouTube Mobile & Desktop search preview</li>
               <li><span>✓</span> <strong>TikTok FYP Mode</strong>: 9:16 vertical cover & title check</li>
             </ul>
-            <button class="btn-success btn-block tool-launch-btn" data-launch="tab-thumb">
-              Launch Packaging Suite →
+            <button class="btn-card-launch tool-launch-btn" data-launch="tab-thumb">
+              <span>Launch Packaging Suite</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
 
           <!-- Card 4: Visuals & Meme Studio -->
           <div class="tool-card" data-category="visuals">
             <div class="tool-card-glow glow-emerald"></div>
+            <div class="card-accent-line accent-emerald"></div>
             <div class="tool-card-header">
               <div class="tool-card-icon icon-emerald">🪄</div>
               <div>
-                <span class="chip chip-purple">Category 4: Image & Memes</span>
-                <h3 class="tool-card-title">Studio & PixelClean</h3>
+                <span class="card-tag tag-emerald">VISUALS · 2 TOOLS</span>
+                <h3 class="tool-card-title">DropStudio & PixelClean</h3>
               </div>
             </div>
             <p class="tool-card-desc">
@@ -190,41 +237,30 @@
               <li><span>✓</span> <strong>Smart Face Retouch</strong>: Micro-smoothing & portrait contrast boost</li>
               <li><span>✓</span> <strong>MemeGenerator Pro</strong>: Classic viral top/bottom text overlays</li>
             </ul>
-            <button class="btn-primary btn-block tool-launch-btn" data-launch="tab-drop">
-              Launch Visuals Suite →
+            <button class="btn-card-launch tool-launch-btn" data-launch="tab-drop">
+              <span>Launch Visuals Suite</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
         </div>
 
-        <!-- Privacy & Performance Banner Strip -->
-        <div class="home-badge-strip">
-          <div class="strip-item">
-            <span class="strip-icon">🔒</span>
-            <div>
-              <strong>100% Private</strong>
-              <p>Zero files uploaded to servers</p>
-            </div>
+        <!-- Trust & Performance Banner -->
+        <div class="home-trust-banner">
+          <div class="trust-item">
+            <div class="trust-icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <div><strong>100% Private</strong><p>Zero server uploads ever</p></div>
           </div>
-          <div class="strip-item">
-            <span class="strip-icon">⚡</span>
-            <div>
-              <strong>Hardware Accelerated</strong>
-              <p>Processed in HTML5 Canvas & Web Audio</p>
-            </div>
+          <div class="trust-item">
+            <div class="trust-icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div><strong>Hardware Accelerated</strong><p>Canvas & Web Audio DSP</p></div>
           </div>
-          <div class="strip-item">
-            <span class="strip-icon">🎨</span>
-            <div>
-              <strong>1-Click Testing</strong>
-              <p>Procedural test samples for all 4 tools</p>
-            </div>
+          <div class="trust-item">
+            <div class="trust-icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
+            <div><strong>Instant Processing</strong><p>No waiting, no queues</p></div>
           </div>
-          <div class="strip-item">
-            <span class="strip-icon">🚀</span>
-            <div>
-              <strong>Instant Downloads</strong>
-              <p>Direct MP4/WebM & PNG exports</p>
-            </div>
+          <div class="trust-item">
+            <div class="trust-icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+            <div><strong>Direct Downloads</strong><p>MP4, WebM & PNG exports</p></div>
           </div>
         </div>
       </div>
