@@ -167,9 +167,9 @@ class OpusReel {
     this.captionTextArea.addEventListener('input', () => this.renderFrame());
 
     // Caption Style Pills
-    document.querySelectorAll('.preset-pill').forEach((pill) => {
+    document.querySelectorAll('#panel-opus .preset-pill').forEach((pill) => {
       pill.addEventListener('click', () => {
-        document.querySelectorAll('.preset-pill').forEach((p) => p.classList.remove('active'));
+        document.querySelectorAll('#panel-opus .preset-pill').forEach((p) => p.classList.remove('active'));
         pill.classList.add('active');
         this.captionStyle = pill.dataset.style;
         this.renderFrame();
@@ -255,7 +255,7 @@ class OpusReel {
   }
 
   togglePlay() {
-    if (!this.video.src) return;
+    if (!this.video.videoWidth) return;
     if (this.isPlaying) {
       this.pauseVideo();
     } else {
@@ -551,7 +551,7 @@ class OpusReel {
    * Export the 9:16 Canvas to WebM / MP4 video file
    */
   async exportReel() {
-    if (!this.video.src || this.isExporting) return;
+    if (!this.video.videoWidth || this.isExporting) return;
     this.isExporting = true;
     this.exportBtn.disabled = true;
     this.exportBtn.textContent = 'Rendering 9:16 Reel... ⏳';

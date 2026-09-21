@@ -147,6 +147,7 @@ window.App = {
     let icon = 'ℹ️';
     if (type === 'success') icon = '✅';
     if (type === 'error') icon = '⚠️';
+    if (type === 'warning') icon = '⚠️';
 
     toast.innerHTML = `<span>${icon}</span><span>${message}</span>`;
     this.toastContainer.appendChild(toast);

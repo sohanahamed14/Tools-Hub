@@ -110,6 +110,21 @@ class PixelClean {
     this.wrapper.addEventListener('mousedown', (e) => this.onMouseDown(e));
     window.addEventListener('mouseup', () => { this.isDrawing = false; });
 
+    // Touch events for mobile brush painting
+    this.wrapper.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      if (this.originalImg) this.brushCursor.style.display = 'block';
+      this.onMouseDown(e.touches[0]);
+    }, { passive: false });
+    this.wrapper.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      this.onMouseMove(e.touches[0]);
+    }, { passive: false });
+    this.wrapper.addEventListener('touchend', () => {
+      this.isDrawing = false;
+      this.brushCursor.style.display = 'none';
+    });
+
     // Actions
     this.clearMaskBtn.addEventListener('click', () => this.clearMask());
     this.undoBtn.addEventListener('click', () => this.undo());

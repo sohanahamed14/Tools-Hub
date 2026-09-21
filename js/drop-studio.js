@@ -85,9 +85,9 @@ class DropStudio {
     });
 
     // Backdrop swatches
-    document.querySelectorAll('.backdrop-swatch').forEach((swatch) => {
+    document.querySelectorAll('#panel-drop .backdrop-swatch').forEach((swatch) => {
       swatch.addEventListener('click', () => {
-        document.querySelectorAll('.backdrop-swatch').forEach((s) => s.classList.remove('active'));
+        document.querySelectorAll('#panel-drop .backdrop-swatch').forEach((s) => s.classList.remove('active'));
         swatch.classList.add('active');
         this.backdropType = swatch.dataset.bg;
         this.render();
