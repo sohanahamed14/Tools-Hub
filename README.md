@@ -1,4 +1,4 @@
-# Tools Hub — Viral Creator & AI Studio (v1.0)
+# Tools Hub — Viral Creator & AI Studio 
 
 > **All-in-one in-browser creator workstation: 100% client-side privacy, zero cloud uploads, GPU Canvas & Web Audio API accelerated.**
 
