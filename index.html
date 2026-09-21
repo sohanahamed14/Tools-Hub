@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools Hub — Viral Creator & AI Studio</title>
+  <meta name="description" content="All-in-one viral creator suite: OpusReel 9:16 video clipper, DropStudio background remover, and PixelClean watermark remover & photo enhancer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="brand-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+      </div>
+      <div>
+        <h1 class="brand-title">Tools Hub</h1>
+        <span class="brand-badge">Pro Studio 2.0</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="nav-tab active" id="tab-home" data-target="panel-home" role="tab" aria-selected="true">
+        <span class="tab-icon">🏠</span>
+        <span class="tab-label">Hub Home</span>
+        <span class="tab-sub">11 Tools</span>
+      </button>
+      <button class="nav-tab" id="tab-opus" data-target="panel-opus" role="tab" aria-selected="false">
+        <span class="tab-icon">🎬</span>
+        <span class="tab-label">OpusReel</span>
+        <span class="tab-sub">Viral Shorts</span>
+      </button>
+      <button class="nav-tab" id="tab-audio" data-target="panel-audio" role="tab" aria-selected="false">
+        <span class="tab-icon">🎙️</span>
+        <span class="tab-label">AudioMagic</span>
+        <span class="tab-sub">Mic & Soundboard</span>
+      </button>
+      <button class="nav-tab" id="tab-drop" data-target="panel-drop" role="tab" aria-selected="false">
+        <span class="tab-icon">🪄</span>
+        <span class="tab-label">DropStudio</span>
+        <span class="tab-sub">Backgrounds</span>
+      </button>
+      <button class="nav-tab" id="tab-pixel" data-target="panel-pixel" role="tab" aria-selected="false">
+        <span class="tab-icon">🧼</span>
+        <span class="tab-label">PixelClean</span>
+        <span class="tab-sub">Watermark</span>
+      </button>
+      <button class="nav-tab" id="tab-thumb" data-target="panel-thumb" role="tab" aria-selected="false">
+        <span class="tab-icon">🔥</span>
+        <span class="tab-label">ThumbForge</span>
+        <span class="tab-sub">Thumbnail</span>
+      </button>
+    </nav>
+
+    <div class="header-status">
+      <span class="status-indicator"></span>
+      <span class="status-text">100% Client-Side</span>
+      <span class="status-pill-badge">Zero Uploads</span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-main">
+    <!-- HOME DASHBOARD: All 4 Categories & 11 Tools Showcase -->
+    <section class="tool-panel active" id="panel-home" role="tabpanel">
+      <div class="home-dashboard">
+        <!-- Hero Header -->
+        <div class="home-hero">
+          <span class="hero-chip">⚡ 11 VIRAL CREATOR TOOLS • ZERO SERVERS • 100% PRIVACY</span>
+          <h2 class="hero-title">Create Viral Content 10x Faster with In-Browser AI Tools</h2>
+          <p class="hero-subtitle">
+            The complete creator stack: auto jump-cut talking-head videos, dynamic Hormozi subtitles,
+            studio mic dynamics, viral soundboards, MrBeast neon thumbnails, and feed simulators.
+          </p>
+        </div>
+
+        <!-- Live Search & Category Filter Bar -->
+        <div class="home-filter-section">
+          <div class="home-search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="home-search-input" class="home-search-input" placeholder="Search 11 viral creator tools (e.g. silence stripper, soundboard, teleprompter, mrbeast glow, title scorer)...">
+            <kbd class="search-shortcut">⌘K</kbd>
+          </div>
+          <div class="home-category-pills">
+            <button class="cat-pill active" data-cat="all">⚡ All Tools (11)</button>
+            <button class="cat-pill" data-cat="video">🎬 Video & Retention (4)</button>
+            <button class="cat-pill" data-cat="audio">🎙️ Audio & Voice (3)</button>
+            <button class="cat-pill" data-cat="growth">🔥 Packaging & Growth (2)</button>
+            <button class="cat-pill" data-cat="visuals">🎨 Visuals & Memes (2)</button>
+          </div>
+        </div>
+
+        <!-- 4-Category Cards Grid -->
+        <div class="home-cards-grid">
+          <!-- Card 1: Video Retention & Social -->
+          <div class="tool-card" data-category="video">
+            <div class="tool-card-glow glow-purple"></div>
+            <div class="tool-card-header">
+              <div class="tool-card-icon icon-purple">🎬</div>
+              <div>
+                <span class="chip chip-purple">Category 1: Video Retention</span>
+                <h3 class="tool-card-title">OpusReel Studio</h3>
+              </div>
+            </div>
+            <p class="tool-card-desc">
+              Full suite for short-form retention: 9:16 smart crop, silence stripper jump-cutter, dynamic Hormozi subtitles, teleprompter, and audiograms.
+            </p>
+            <ul class="tool-features-list">
+              <li><span>✓</span> <strong>SilenceStripper</strong>: Auto-cuts dead air pauses for high retention</li>
+              <li><span>✓</span> <strong>Audiogram Studio</strong>: Real-time reactive soundwave bars</li>
+              <li><span>✓</span> <strong>Teleprompter Pro</strong>: Floating transparent scrolling prompter</li>
+              <li><span>✓</span> <strong>OpusReel</strong>: 9:16 reframe & bouncing viral word captions</li>
+            </ul>
+            <button class="btn-primary btn-block tool-launch-btn" data-launch="tab-opus">
+              Launch Video Suite →
+            </button>
+          </div>
+
+          <!-- Card 2: Audio & Voice Magic -->
+          <div class="tool-card" data-category="audio">
+            <div class="tool-card-glow glow-cyan"></div>
+            <div class="tool-card-header">
+              <div class="tool-card-icon icon-cyan">🎙️</div>
+              <div>
+                <span class="chip chip-green">Category 2: Audio & Voice</span>
+                <h3 class="tool-card-title">AudioMagic Studio</h3>
+              </div>
+            </div>
+            <p class="tool-card-desc">
+              Studio voice dynamics and viral soundboard: EchoKiller speech clarifier, room noise gating, vocal leveler, and 1-tap creator sound effects.
+            </p>
+            <ul class="tool-features-list">
+              <li><span>✓</span> <strong>EchoKiller / Mic Polish</strong>: 350Hz de-mud & 3.5kHz clarity boost</li>
+              <li><span>✓</span> <strong>Vocal Leveler</strong>: Multi-stage studio dynamics compression</li>
+              <li><span>✓</span> <strong>Noise Gate</strong>: Auto-mutes room background hiss</li>
+              <li><span>✓</span> <strong>Viral Soundboard</strong>: Vine Booms, Cha-Ching, Airhorns & Whooshes</li>
+            </ul>
+            <button class="btn-accent btn-block tool-launch-btn" data-launch="tab-audio">
+              Launch Audio Suite →
+            </button>
+          </div>
+
+          <!-- Card 3: Viral Packaging & Growth -->
+          <div class="tool-card" data-category="growth">
+            <div class="tool-card-glow glow-amber"></div>
+            <div class="tool-card-header">
+              <div class="tool-card-icon icon-amber">🔥</div>
+              <div>
+                <span class="chip chip-green">Category 3: Viral Packaging</span>
+                <h3 class="tool-card-title">ThumbForge & Scorer</h3>
+              </div>
+            </div>
+            <p class="tool-card-desc">
+              High-CTR thumbnail studio and feed simulator: MrBeast neon outlines, high-impact typography, and live algorithmic viral headline CTR scorer.
+            </p>
+            <ul class="tool-features-list">
+              <li><span>✓</span> <strong>MrBeast Neon Glow</strong>: Multi-layer stroke & aura diffusion</li>
+              <li><span>✓</span> <strong>Viral Title & Hook Scorer</strong>: Live A-F grade & power word check</li>
+              <li><span>✓</span> <strong>Feed Simulator</strong>: YouTube Mobile & Desktop search preview</li>
+              <li><span>✓</span> <strong>TikTok FYP Mode</strong>: 9:16 vertical cover & title check</li>
+            </ul>
+            <button class="btn-success btn-block tool-launch-btn" data-launch="tab-thumb">
+              Launch Packaging Suite →
+            </button>
+          </div>
+
+          <!-- Card 4: Visuals & Meme Studio -->
+          <div class="tool-card" data-category="visuals">
+            <div class="tool-card-glow glow-emerald"></div>
+            <div class="tool-card-header">
+              <div class="tool-card-icon icon-emerald">🪄</div>
+              <div>
+                <span class="chip chip-purple">Category 4: Image & Memes</span>
+                <h3 class="tool-card-title">Studio & PixelClean</h3>
+              </div>
+            </div>
+            <p class="tool-card-desc">
+              One-click background remover with 3D podium contact shadows, patch diffusion watermark eraser, 1-click HD photo auto-enhancer, and meme generator.
+            </p>
+            <ul class="tool-features-list">
+              <li><span>✓</span> <strong>DropStudio</strong>: 1-click background removal & 3D podium shadow</li>
+              <li><span>✓</span> <strong>PixelClean</strong>: Brush watermark healing & ⚡ Magic HD auto-enhance</li>
+              <li><span>✓</span> <strong>Smart Face Retouch</strong>: Micro-smoothing & portrait contrast boost</li>
+              <li><span>✓</span> <strong>MemeGenerator Pro</strong>: Classic viral top/bottom text overlays</li>
+            </ul>
+            <button class="btn-primary btn-block tool-launch-btn" data-launch="tab-drop">
+              Launch Visuals Suite →
+            </button>
+          </div>
+        </div>
+
+        <!-- Privacy & Performance Banner Strip -->
+        <div class="home-badge-strip">
+          <div class="strip-item">
+            <span class="strip-icon">🔒</span>
+            <div>
+              <strong>100% Private</strong>
+              <p>Zero files uploaded to servers</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <span class="strip-icon">⚡</span>
+            <div>
+              <strong>Hardware Accelerated</strong>
+              <p>Processed in HTML5 Canvas & Web Audio</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <span class="strip-icon">🎨</span>
+            <div>
+              <strong>1-Click Testing</strong>
+              <p>Procedural test samples for all 4 tools</p>
+            </div>
+          </div>
+          <div class="strip-item">
+            <span class="strip-icon">🚀</span>
+            <div>
+              <strong>Instant Downloads</strong>
+              <p>Direct MP4/WebM & PNG exports</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOL: AudioMagic (EchoKiller / Mic Polish & Viral Creator Soundboard) -->
+    <section class="tool-panel" id="panel-audio" role="tabpanel">
+      <div class="panel-layout">
+        <aside class="panel-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>EchoKiller / Mic Polish</h3>
+              <div class="btn-row">
+                <button class="btn-ghost btn-sm btn-back-hub">← Home</button>
+              </div>
+            </div>
+            <p class="card-desc">Studio vocal processor: 80Hz rumble cut, 350Hz room de-mud, 3.5kHz speech clarity, and noise gate.</p>
+            <button class="btn-primary btn-block mb-2" id="audio-mic-toggle">🎙️ Start Mic Live Test</button>
+            <span id="audio-mic-status" class="meta-hint">Microphone disconnected</span>
+
+            <div class="toggle-group mt-3">
+              <label class="toggle-label">
+                <input type="checkbox" id="audio-bypass-toggle">
+                <span class="toggle-slider"></span>
+                <span>Bypass Filters (Hear Raw Mic)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- DSP Tuning Sliders -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>DSP Vocal Tuning</h3>
+              <span class="chip chip-purple">Adobe Enhance Style</span>
+            </div>
+
+            <div class="control-group">
+              <label for="audio-clarity-boost">Speech Clarity Boost (3.5kHz)</label>
+              <div class="slider-row">
+                <input type="range" id="audio-clarity-boost" min="0" max="12" value="6">
+                <span class="slider-val" id="audio-clarity-val">+6 dB</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label for="audio-compression">Vocal Compression Leveler</label>
+              <div class="slider-row">
+                <input type="range" id="audio-compression" min="2" max="8" value="4">
+                <span class="slider-val" id="audio-comp-val">4:1</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label for="audio-gate-threshold">Room Noise Gate Sensitivity</label>
+              <div class="slider-row">
+                <input type="range" id="audio-gate-threshold" min="-60" max="-20" value="-42">
+                <span class="slider-val" id="audio-gate-val">-42 dB</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Preview Stage: Real-time Waveform Visualizer & Soundboard -->
+        <main class="panel-stage">
+          <div class="preview-container audio-viewport">
+            <div class="audio-stage-header">
+              <h3>Real-Time Speech Dynamics Waveform</h3>
+              <span class="chip chip-green">Web Audio DSP Active</span>
+            </div>
+            <canvas id="audio-wave-canvas" width="760" height="180"></canvas>
+          </div>
+
+          <!-- Viral Soundboard Grid -->
+          <div class="soundboard-container">
+            <div class="soundboard-header">
+              <h3>⚡ Viral Creator Soundboard (1-Tap SFX)</h3>
+              <span class="meta-hint">Click to trigger instant sound effects for videos and streams</span>
+            </div>
+            <div class="soundboard-grid">
+              <button class="sound-btn" data-sound="vine-boom">
+                <span class="sound-icon">💥</span>
+                <span class="sound-name">Vine Boom</span>
+                <span class="sound-sub">Sub Drop Bass</span>
+              </button>
+              <button class="sound-btn" data-sound="cha-ching">
+                <span class="sound-icon">💰</span>
+                <span class="sound-name">Cha-Ching</span>
+                <span class="sound-sub">Cash Register</span>
+              </button>
+              <button class="sound-btn" data-sound="whoosh">
+                <span class="sound-icon">💨</span>
+                <span class="sound-name">Whoosh</span>
+                <span class="sound-sub">Transition Swish</span>
+              </button>
+              <button class="sound-btn" data-sound="airhorn">
+                <span class="sound-icon">📢</span>
+                <span class="sound-name">Airhorn</span>
+                <span class="sound-sub">Hype Fanfare</span>
+              </button>
+              <button class="sound-btn" data-sound="glitch">
+                <span class="sound-icon">⚡</span>
+                <span class="sound-name">Glitch Hit</span>
+                <span class="sound-sub">Digital Error</span>
+              </button>
+              <button class="sound-btn" data-sound="ding">
+                <span class="sound-icon">🔔</span>
+                <span class="sound-name">Correct Ding</span>
+                <span class="sound-sub">Bright Chime</span>
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL 1: OpusReel (Video Shorts, 9:16 Reframe & Dynamic Captions) -->
+    <section class="tool-panel" id="panel-opus" role="tabpanel">
+      <div class="panel-layout">
+        <!-- Sidebar Controls -->
+        <aside class="panel-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Source Video</h3>
+              <div class="btn-row">
+                <button class="btn-ghost btn-sm btn-back-hub">← Home</button>
+                <button class="btn-ghost btn-sm" id="opus-load-sample">Load Sample 🎬</button>
+              </div>
+            </div>
+            <div class="drop-zone" id="opus-drop-zone">
+              <input type="file" id="opus-file-input" accept="video/*" hidden>
+              <div class="drop-content">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="17 8 12 3 7 8" />
+                  <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+                <p>Drag video here or <span class="accent-link">browse</span></p>
+                <span class="meta-hint">MP4, WebM, MOV supported</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reframe & Crop Settings -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>9:16 Smart Reframe</h3>
+              <span class="chip chip-purple">Viral TikTok</span>
+            </div>
+            <div class="control-group">
+              <label for="opus-pan-x">Horizontal Tracking Offset</label>
+              <div class="slider-row">
+                <input type="range" id="opus-pan-x" min="0" max="100" value="50">
+                <span class="slider-val" id="opus-pan-x-val">Center</span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="opus-zoom">Scale / Zoom</label>
+              <div class="slider-row">
+                <input type="range" id="opus-zoom" min="100" max="180" value="100">
+                <span class="slider-val" id="opus-zoom-val">1.0x</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Captions Settings -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Viral Dynamic Captions</h3>
+              <span class="chip chip-green">Hormozi Style</span>
+            </div>
+
+            <div class="control-group">
+              <label for="opus-hook-select">Viral Hook Banner</label>
+              <select id="opus-hook-select" class="form-select">
+                <option value="STOP SCROLLING 🚨">STOP SCROLLING 🚨</option>
+                <option value="THIS WILL BLOW YOUR MIND 🤯">THIS WILL BLOW YOUR MIND 🤯</option>
+                <option value="SECRET NOBODY TELLS YOU 🤫">SECRET NOBODY TELLS YOU 🤫</option>
+                <option value="WATCH UNTIL THE END ⏳">WATCH UNTIL THE END ⏳</option>
+                <option value="CUSTOM">Custom Hook Text...</option>
+                <option value="NONE">No Hook</option>
+              </select>
+              <input type="text" id="opus-custom-hook" class="form-input mt-2 hidden" placeholder="Type custom hook title...">
+            </div>
+
+            <div class="control-group">
+              <label>Caption Style Preset</label>
+              <div class="preset-grid">
+                <button class="preset-pill active" data-style="hormozi-yellow">🟡 Yellow Pop</button>
+                <button class="preset-pill" data-style="cyber-cyan">💎 Cyber Cyan</button>
+                <button class="preset-pill" data-style="red-impact">🔥 Flame Red</button>
+                <button class="preset-pill" data-style="clean-white">⚪ Minimal</button>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label for="opus-caption-text">Subtitles Script (Auto-synced)</label>
+              <textarea id="opus-caption-text" class="form-textarea" rows="4" placeholder="Enter transcript lines or words..."></textarea>
+            </div>
+          </div>
+
+          <!-- SilenceStripper & Audiogram Settings -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>SilenceStripper & Audio</h3>
+              <span class="chip chip-purple">Auto Jump-Cut</span>
+            </div>
+            <div class="toggle-group mb-2">
+              <label class="toggle-label">
+                <input type="checkbox" id="opus-silence-toggle">
+                <span class="toggle-slider"></span>
+                <span>Cut Dead Air Pauses (Jump-Cut)</span>
+              </label>
+            </div>
+            <div class="control-group">
+              <label for="opus-silence-thresh">Silence Sensitivity Threshold</label>
+              <div class="slider-row">
+                <input type="range" id="opus-silence-thresh" min="5" max="40" value="18">
+                <span class="slider-val" id="opus-silence-val">18%</span>
+              </div>
+            </div>
+            <div class="toggle-group mt-3">
+              <label class="toggle-label">
+                <input type="checkbox" id="opus-audiogram-toggle" checked>
+                <span class="toggle-slider"></span>
+                <span>Show Reactive Audiogram Wave</span>
+              </label>
+            </div>
+            <button class="btn-ghost btn-sm btn-block mt-2" id="opus-open-teleprompter-btn">
+              📜 Open Teleprompter Pro
+            </button>
+          </div>
+
+          <!-- Trimmer & Export -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Export Clip</h3>
+            </div>
+            <div class="control-group">
+              <label>Target Duration</label>
+              <div class="pill-group">
+                <button class="pill active" data-duration="15">15s Short</button>
+                <button class="pill" data-duration="30">30s Reel</button>
+                <button class="pill" data-duration="60">60s Full</button>
+              </div>
+            </div>
+            <button class="btn-primary btn-block" id="opus-export-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Render & Download Reel
+            </button>
+          </div>
+        </aside>
+
+        <!-- Preview Stage -->
+        <main class="panel-stage">
+          <div class="preview-container phone-frame">
+            <div class="phone-notch"></div>
+            <div class="canvas-wrapper">
+              <canvas id="opus-canvas" width="1080" height="1920"></canvas>
+              <video id="opus-video-source" playsinline loop muted crossorigin="anonymous" style="display:none;"></video>
+            </div>
+            <div class="stage-overlay-controls">
+              <button class="btn-circle" id="opus-play-pause-btn" title="Play/Pause">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" id="opus-play-icon">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </button>
+              <div class="time-readout" id="opus-time-readout">00:00 / 00:15</div>
+            </div>
+          </div>
+
+          <!-- Timeline Scrubber Bar -->
+          <div class="timeline-bar">
+            <button class="btn-ghost btn-sm" id="opus-restart-btn">↺ Loop</button>
+            <div class="timeline-track" id="opus-timeline-track">
+              <div class="timeline-progress" id="opus-timeline-progress"></div>
+              <div class="timeline-trim-region" id="opus-trim-region"></div>
+            </div>
+            <span class="timeline-time" id="opus-timeline-duration">15.0s</span>
+          </div>
+
+          <!-- Teleprompter Pro Drawer Overlay -->
+          <div class="teleprompter-drawer hidden" id="opus-teleprompter-drawer">
+            <div class="teleprompter-header">
+              <h4>📜 Teleprompter Pro</h4>
+              <div class="teleprompter-controls">
+                <label>Speed: <span id="teleprompter-speed-val">2x</span></label>
+                <input type="range" id="teleprompter-speed" min="1" max="5" value="2">
+                <button class="btn-accent btn-sm" id="teleprompter-scroll-toggle-btn">▶ Scroll</button>
+                <button class="btn-ghost btn-sm" id="teleprompter-close-btn">✕</button>
+              </div>
+            </div>
+            <div class="teleprompter-body" id="teleprompter-scroll-area">
+              <p id="teleprompter-text" contenteditable="true">
+                Welcome back! Today we are testing the most viral creator tools built completely in the browser.
+                Notice how fast talking-head videos get when you strip out silent pauses!
+                Subtitles pop with dynamic color highlights, and the background is removed in 1 click.
+                Hit like, subscribe, and let me know in the comments what you think!
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL 2: DropStudio (1-Click Background Removal, Backdrops, Uncrop & Upscaler) -->
+    <section class="tool-panel" id="panel-drop" role="tabpanel">
+      <div class="panel-layout">
+        <aside class="panel-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Image Input</h3>
+              <div class="btn-row">
+                <button class="btn-ghost btn-sm btn-back-hub">← Home</button>
+                <button class="btn-ghost btn-sm" id="drop-load-sample">Load Product 👟</button>
+              </div>
+            </div>
+            <div class="drop-zone" id="drop-drop-zone">
+              <input type="file" id="drop-file-input" accept="image/*" hidden>
+              <div class="drop-content">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+                <p>Drag photo here or <span class="accent-link">browse</span></p>
+                <span class="meta-hint">PNG, JPG, WebP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Background Removal Action -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Background Eraser</h3>
+              <span class="chip chip-purple">Photoroom Style</span>
+            </div>
+            <button class="btn-primary btn-block mb-3" id="drop-remove-bg-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+              1-Click Remove Background
+            </button>
+            <div class="control-group">
+              <label for="drop-tolerance">Edge Sensitivity / Cutout Threshold</label>
+              <div class="slider-row">
+                <input type="range" id="drop-tolerance" min="10" max="90" value="45">
+                <span class="slider-val" id="drop-tolerance-val">45</span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="drop-feather">Feather Edge Softness</label>
+              <div class="slider-row">
+                <input type="range" id="drop-feather" min="0" max="10" value="2">
+                <span class="slider-val" id="drop-feather-val">2px</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Studio Backdrop & Lighting -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Studio Backdrop & Lighting</h3>
+            </div>
+            <div class="backdrop-palette">
+              <button class="backdrop-swatch active" data-bg="transparent" title="Transparent PNG">🏁</button>
+              <button class="backdrop-swatch" data-bg="studio-white" title="Studio White Light" style="background:#f3f4f6;"></button>
+              <button class="backdrop-swatch" data-bg="obsidian-dark" title="Obsidian Pro" style="background:#111827;"></button>
+              <button class="backdrop-swatch" data-bg="neon-cyber" title="Cyberpunk Glow" style="background:linear-gradient(135deg,#4f46e5,#ec4899);"></button>
+              <button class="backdrop-swatch" data-bg="warm-sunset" title="Warm Sunset" style="background:linear-gradient(135deg,#f59e0b,#ef4444);"></button>
+              <button class="backdrop-swatch" data-bg="emerald-mint" title="Emerald Luxury" style="background:linear-gradient(135deg,#059669,#10b981);"></button>
+              <button class="backdrop-swatch" data-bg="blur-original" title="Blurred Original">🌫️</button>
+            </div>
+            <div class="toggle-group mt-3">
+              <label class="toggle-label">
+                <input type="checkbox" id="drop-shadow-toggle" checked>
+                <span class="toggle-slider"></span>
+                <span>Add 3D Product Podium Shadow</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Uncrop & Upscaler -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Uncrop & Super Upscale</h3>
+            </div>
+            <div class="control-group">
+              <label>Aspect Ratio Uncrop / Expansion</label>
+              <div class="pill-group">
+                <button class="pill active" data-uncrop="original">Original</button>
+                <button class="pill" data-uncrop="1:1">1:1 Square</button>
+                <button class="pill" data-uncrop="16:9">16:9 Banner</button>
+                <button class="pill" data-uncrop="9:16">9:16 Story</button>
+              </div>
+            </div>
+            <div class="control-group">
+              <label>AI Upscale Factor</label>
+              <div class="pill-group">
+                <button class="pill active" data-upscale="1">1x Standard</button>
+                <button class="pill" data-upscale="2">2x HD Boost</button>
+                <button class="pill" data-upscale="4">4x Ultra-Sharp</button>
+              </div>
+            </div>
+            <button class="btn-success btn-block" id="drop-download-btn">Download Studio PNG</button>
+          </div>
+        </aside>
+
+        <!-- Preview Stage -->
+        <main class="panel-stage">
+          <div class="preview-container studio-viewport">
+            <canvas id="drop-canvas"></canvas>
+            <div class="view-toggle-bar">
+              <button class="btn-ghost btn-sm active" id="drop-view-composite">Studio View</button>
+              <button class="btn-ghost btn-sm" id="drop-view-mask">Mask View</button>
+              <button class="btn-ghost btn-sm" id="drop-view-original">Original View</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL 3: PixelClean (Watermark Remover & HD Photo Enhancer) -->
+    <section class="tool-panel" id="panel-pixel" role="tabpanel">
+      <div class="panel-layout">
+        <aside class="panel-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Image Input</h3>
+              <div class="btn-row">
+                <button class="btn-ghost btn-sm btn-back-hub">← Home</button>
+                <button class="btn-ghost btn-sm" id="pixel-load-sample">Load Sample 🖼️</button>
+              </div>
+            </div>
+            <div class="drop-zone" id="pixel-drop-zone">
+              <input type="file" id="pixel-file-input" accept="image/*" hidden>
+              <div class="drop-content">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+                </svg>
+                <p>Drag watermarked photo or <span class="accent-link">browse</span></p>
+                <span class="meta-hint">Instant patch inpainting</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Watermark Eraser Brush -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Watermark Inpainter</h3>
+              <span class="chip chip-purple">Content-Aware</span>
+            </div>
+            <p class="card-desc">Paint over any logo, stamp, or unwanted text, then click Inpaint.</p>
+            
+            <div class="control-group">
+              <label for="pixel-brush-size">Eraser Brush Size</label>
+              <div class="slider-row">
+                <input type="range" id="pixel-brush-size" min="5" max="80" value="25">
+                <span class="slider-val" id="pixel-brush-size-val">25px</span>
+              </div>
+            </div>
+
+            <div class="btn-row mb-3">
+              <button class="btn-ghost btn-sm" id="pixel-clear-mask-btn">Clear Mask</button>
+              <button class="btn-ghost btn-sm" id="pixel-undo-btn">Undo</button>
+            </div>
+
+            <button class="btn-primary btn-block" id="pixel-inpaint-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/>
+                <circle cx="11" cy="11" r="2"/>
+              </svg>
+              Erase Watermark & Heal
+            </button>
+          </div>
+
+          <!-- HD Photo Enhancer -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>HD Photo Enhancer</h3>
+              <span class="chip chip-green">1-Click Auto</span>
+            </div>
+            <button class="btn-accent btn-block mb-3" id="pixel-auto-enhance-btn">
+              ⚡ Magic 1-Click Auto Enhance
+            </button>
+
+            <div class="control-group">
+              <label for="pixel-slider-clarity">Clarity & Detail</label>
+              <div class="slider-row">
+                <input type="range" id="pixel-slider-clarity" min="0" max="100" value="0">
+                <span class="slider-val" id="pixel-clarity-val">0</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label for="pixel-slider-sharpness">Smart Sharpness</label>
+              <div class="slider-row">
+                <input type="range" id="pixel-slider-sharpness" min="0" max="100" value="0">
+                <span class="slider-val" id="pixel-sharpness-val">0</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label for="pixel-slider-contrast">Vibrance & Contrast</label>
+              <div class="slider-row">
+                <input type="range" id="pixel-slider-contrast" min="-50" max="50" value="0">
+                <span class="slider-val" id="pixel-contrast-val">0</span>
+              </div>
+            </div>
+
+            <button class="btn-ghost btn-sm btn-block mt-2" id="pixel-reset-enhance-btn">Reset Enhancements</button>
+          </div>
+
+          <!-- Smart Face Retouch -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Smart Face Retouch</h3>
+              <span class="chip chip-green">1-Click Portrait</span>
+            </div>
+            <p class="card-desc">Applies bilateral facial smoothing and portrait eye brightening.</p>
+            <button class="btn-primary btn-block" id="pixel-face-retouch-btn">✨ 1-Click Face Retouch</button>
+          </div>
+
+          <!-- MemeGenerator Pro Mode -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>MemeGenerator Pro</h3>
+              <span class="chip chip-purple">Classic Format</span>
+            </div>
+            <div class="control-group">
+              <label for="pixel-meme-top">Top Meme Text</label>
+              <input type="text" id="pixel-meme-top" class="form-input" placeholder="WHEN YOU FIND A FREE AI TOOL...">
+            </div>
+            <div class="control-group">
+              <label for="pixel-meme-bottom">Bottom Meme Text</label>
+              <input type="text" id="pixel-meme-bottom" class="form-input" placeholder="THAT RUNS 100% IN YOUR BROWSER">
+            </div>
+            <button class="btn-accent btn-block mt-2" id="pixel-render-meme-btn">Generate Impact Meme</button>
+          </div>
+
+          <!-- Download Action -->
+          <div class="sidebar-card">
+            <button class="btn-success btn-block" id="pixel-download-btn">Download Clean HD Photo</button>
+          </div>
+        </aside>
+
+        <!-- Preview Stage with Split-View Slider -->
+        <main class="panel-stage">
+          <div class="preview-container split-viewport" id="pixel-viewport">
+            <div class="split-wrapper" id="pixel-split-wrapper">
+              <!-- Result Canvas -->
+              <canvas id="pixel-main-canvas"></canvas>
+              <!-- Mask Canvas (for painting brush) -->
+              <canvas id="pixel-mask-canvas"></canvas>
+              <!-- Brush Cursor Indicator -->
+              <div id="pixel-brush-cursor" class="brush-cursor"></div>
+            </div>
+
+            <!-- Comparison Mode Bar -->
+            <div class="stage-bottom-bar">
+              <span class="meta-hint">Hold <kbd>Space</kbd> or toggle compare to see original</span>
+              <button class="btn-ghost btn-sm" id="pixel-compare-toggle">Toggle Original</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL 4: ThumbForge (Viral Thumbnail Studio & Social Feed Simulator) -->
+    <section class="tool-panel" id="panel-thumb" role="tabpanel">
+      <div class="panel-layout">
+        <aside class="panel-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Thumbnail Subject</h3>
+              <div class="btn-row">
+                <button class="btn-ghost btn-sm btn-back-hub">← Home</button>
+                <button class="btn-ghost btn-sm" id="thumb-load-sample">Load Creator 🧔</button>
+              </div>
+            </div>
+            <div class="drop-zone" id="thumb-drop-zone">
+              <input type="file" id="thumb-file-input" accept="image/*" hidden>
+              <div class="drop-content">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                <p>Drag creator photo or <span class="accent-link">browse</span></p>
+                <span class="meta-hint">PNG cutout or photo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MrBeast Neon Outline & Glow -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Neon Subject Glow</h3>
+              <span class="chip chip-purple">MrBeast Style</span>
+            </div>
+            <div class="toggle-group mb-2">
+              <label class="toggle-label">
+                <input type="checkbox" id="thumb-glow-toggle" checked>
+                <span class="toggle-slider"></span>
+                <span>Enable Subject Neon Outline</span>
+              </label>
+            </div>
+
+            <div class="control-group">
+              <label>Glow Color</label>
+              <div class="backdrop-palette">
+                <button class="backdrop-swatch active" data-color="#06b6d4" style="background:#06b6d4;" title="Cyan Glow"></button>
+                <button class="backdrop-swatch" data-color="#facc15" style="background:#facc15;" title="Yellow Glow"></button>
+                <button class="backdrop-swatch" data-color="#ec4899" style="background:#ec4899;" title="Neon Pink"></button>
+                <button class="backdrop-swatch" data-color="#ef4444" style="background:#ef4444;" title="Flame Red"></button>
+                <button class="backdrop-swatch" data-color="#ffffff" style="background:#ffffff;" title="Crisp White"></button>
+                <button class="backdrop-swatch" data-color="#10b981" style="background:#10b981;" title="Emerald Glow"></button>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label for="thumb-glow-size">Stroke Thickness</label>
+              <div class="slider-row">
+                <input type="range" id="thumb-glow-size" min="2" max="25" value="10">
+                <span class="slider-val" id="thumb-glow-size-val">10px</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label for="thumb-glow-spread">Glow Diffusion / Spread</label>
+              <div class="slider-row">
+                <input type="range" id="thumb-glow-spread" min="0" max="50" value="25">
+                <span class="slider-val" id="thumb-glow-spread-val">25px</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Viral Typography & Badges -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Viral Typography & Badges</h3>
+              <span class="chip chip-green">High CTR</span>
+            </div>
+
+            <div class="control-group">
+              <label for="thumb-headline-input">Big Impact Headline</label>
+              <input type="text" id="thumb-headline-input" class="form-input" value="I BUILT THIS IN 24 HOURS!">
+            </div>
+
+            <div class="control-group">
+              <label for="thumb-badge-select">Viral Alert Badge</label>
+              <select id="thumb-badge-select" class="form-select">
+                <option value="🔥 SHOCKING">🔥 SHOCKING</option>
+                <option value="🚨 DON'T MISS">🚨 DON'T MISS</option>
+                <option value="🤫 SECRET REVEALED">🤫 SECRET REVEALED</option>
+                <option value="💰 $1,000,000">💰 $1,000,000</option>
+                <option value="NONE">No Badge</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label>Text Style Preset</label>
+              <div class="preset-grid">
+                <button class="preset-pill active" data-tstyle="yellow-pop">🟡 Beast Yellow</button>
+                <button class="preset-pill" data-tstyle="cyan-glow">💎 Cyber Cyan</button>
+                <button class="preset-pill" data-tstyle="red-alert">🔥 Red Alert</button>
+                <button class="preset-pill" data-tstyle="pure-white">⚪ Pure White</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Viral Title & Hook Scorer -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Viral Title & Hook Scorer</h3>
+              <span class="chip chip-green" id="thumb-score-grade">A+ 94/100</span>
+            </div>
+            <div class="score-meter-box">
+              <div class="score-bar"><div class="score-fill" id="thumb-score-bar" style="width: 94%;"></div></div>
+              <div class="score-breakdown">
+                <span id="thumb-char-count">54 chars (Optimal)</span>
+                <span id="thumb-power-words">3 Power Words 🔥</span>
+              </div>
+            </div>
+            <p class="score-tip" id="thumb-score-tip">Great curiosity gap & strong emotional hook!</p>
+          </div>
+
+          <!-- Feed Simulator Settings -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Live Feed Simulator</h3>
+            </div>
+            <div class="control-group">
+              <label for="thumb-feed-title">Video Title in Feed</label>
+              <input type="text" id="thumb-feed-title" class="form-input" value="I Survived 100 Hours with AI Tools (Insane Results)">
+            </div>
+            <div class="control-group">
+              <label for="thumb-feed-channel">Channel Name</label>
+              <input type="text" id="thumb-feed-channel" class="form-input" value="Creator Studio • 2.4M views • 2 hours ago">
+            </div>
+            <button class="btn-success btn-block" id="thumb-download-btn">Download 1280x720 Thumbnail</button>
+          </div>
+        </aside>
+
+        <!-- Preview Stage & Feed Simulator Mockups -->
+        <main class="panel-stage">
+          <!-- View Switcher -->
+          <div class="pill-group mb-2">
+            <button class="pill active" id="thumb-view-canvas-btn">Studio Canvas</button>
+            <button class="pill" id="thumb-view-yt-mobile-btn">YouTube Mobile Feed</button>
+            <button class="pill" id="thumb-view-yt-desktop-btn">YouTube Desktop</button>
+            <button class="pill" id="thumb-view-tiktok-btn">TikTok FYP</button>
+          </div>
+
+          <!-- Simulator Container -->
+          <div class="preview-container thumb-viewport" id="thumb-viewport">
+            <div id="thumb-canvas-container" class="thumb-canvas-box">
+              <canvas id="thumb-canvas" width="1280" height="720"></canvas>
+            </div>
+
+            <!-- YouTube Mobile Simulator Frame -->
+            <div id="thumb-sim-yt-mobile" class="sim-feed yt-mobile-feed hidden">
+              <div class="sim-yt-video">
+                <div class="sim-thumb-box">
+                  <img id="sim-yt-mobile-img" class="sim-thumb-img" alt="Thumbnail Preview">
+                  <span class="sim-time-badge">12:45</span>
+                </div>
+                <div class="sim-yt-meta">
+                  <div class="sim-avatar">🔥</div>
+                  <div class="sim-details">
+                    <h4 id="sim-yt-title-mobile" class="sim-title">Video Title Preview</h4>
+                    <p id="sim-yt-sub-mobile" class="sim-sub">Channel Name • 1.2M views</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- YouTube Desktop Search Simulator Frame -->
+            <div id="thumb-sim-yt-desktop" class="sim-feed yt-desktop-feed hidden">
+              <div class="sim-yt-row">
+                <div class="sim-thumb-box-desktop">
+                  <img id="sim-yt-desktop-img" class="sim-thumb-img" alt="Thumbnail Preview">
+                  <span class="sim-time-badge">12:45</span>
+                </div>
+                <div class="sim-desktop-meta">
+                  <h3 id="sim-yt-title-desktop" class="sim-title-desktop">Video Title Preview</h3>
+                  <p id="sim-yt-sub-desktop" class="sim-sub">Channel Name • 1.2M views</p>
+                  <p class="sim-desc">Watch what happens when you create an entire viral video using only client-side browser tools in 2026...</p>
+                  <span class="sim-badge">4K</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TikTok FYP Simulator Frame -->
+            <div id="thumb-sim-tiktok" class="sim-feed tiktok-feed hidden">
+              <div class="tiktok-card">
+                <img id="sim-tiktok-img" class="sim-tiktok-img" alt="Cover Preview">
+                <div class="tiktok-meta">
+                  <p class="tiktok-user">@creator_studio</p>
+                  <p id="sim-tiktok-title" class="tiktok-caption">I built this in 24 hours! #viral #trending</p>
+                  <div class="tiktok-music">🎵 Original Audio - Creator</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/sample-assets.js"></script>
+  <script src="js/audio-studio.js"></script>
+  <script src="js/opus-reel.js"></script>
+  <script src="js/drop-studio.js"></script>
+  <script src="js/pixel-clean.js"></script>
+  <script src="js/thumb-forge.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
