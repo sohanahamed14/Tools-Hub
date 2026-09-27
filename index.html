@@ -3,270 +3,921 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tools Hub — Viral Creator & AI Studio</title>
-  <meta name="description" content="All-in-one viral creator suite: OpusReel 9:16 video clipper, DropStudio background remover, and PixelClean watermark remover & photo enhancer.">
+  <title>Tools Hub — All Online Tools in One Box</title>
+  <meta name="description" content="All-in-one free browser toolbox: TextForge case converter, DropStudio background remover, PixelClean watermark eraser, CodeForge JSON/URL tools, QRForge, OpusReel 9:16 video clipper, and 35+ viral creator tools.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Header Bar -->
+<body data-theme="light">
+  <!-- Clean Header Bar -->
   <header class="app-header">
-    <div class="header-brand">
-      <div class="brand-logo">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-        </svg>
+    <div class="header-container">
+      <!-- Left: Brand Logo -->
+      <div class="header-brand">
+        <button class="brand-logo-btn" id="btn-brand-home" aria-label="Tools Hub Home">
+          <div class="brand-logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">Tools Hub</span>
+          </div>
+        </button>
       </div>
-      <div>
-        <h1 class="brand-title">Tools Hub</h1>
-        <span class="brand-badge">Pro Studio 2.0</span>
+
+      <!-- Center: Search Bar -->
+      <div class="header-search-wrap">
+        <div class="header-search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="home-search-input" class="header-search-input" placeholder="Search 35+ Online Tools... (Press ⌘K)" autocomplete="off">
+          <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search" style="display: none;">✕</button>
+          <kbd class="search-shortcut">⌘K</kbd>
+        </div>
       </div>
-    </div>
 
-    <!-- Navigation Tabs -->
-    <nav class="nav-tabs" role="tablist">
-      <button class="nav-tab active" id="tab-home" data-target="panel-home" role="tab" aria-selected="true">
-        <span class="tab-icon">🏠</span>
-        <span class="tab-label">Hub Home</span>
-        <span class="tab-sub">11 Tools</span>
-      </button>
-      <button class="nav-tab" id="tab-opus" data-target="panel-opus" role="tab" aria-selected="false">
-        <span class="tab-icon">🎬</span>
-        <span class="tab-label">OpusReel</span>
-        <span class="tab-sub">Viral Shorts</span>
-      </button>
-      <button class="nav-tab" id="tab-audio" data-target="panel-audio" role="tab" aria-selected="false">
-        <span class="tab-icon">🎙️</span>
-        <span class="tab-label">AudioMagic</span>
-        <span class="tab-sub">Mic & Soundboard</span>
-      </button>
-      <button class="nav-tab" id="tab-drop" data-target="panel-drop" role="tab" aria-selected="false">
-        <span class="tab-icon">🪄</span>
-        <span class="tab-label">DropStudio</span>
-        <span class="tab-sub">Backgrounds</span>
-      </button>
-      <button class="nav-tab" id="tab-pixel" data-target="panel-pixel" role="tab" aria-selected="false">
-        <span class="tab-icon">🧼</span>
-        <span class="tab-label">PixelClean</span>
-        <span class="tab-sub">Watermark</span>
-      </button>
-      <button class="nav-tab" id="tab-thumb" data-target="panel-thumb" role="tab" aria-selected="false">
-        <span class="tab-icon">🔥</span>
-        <span class="tab-label">ThumbForge</span>
-        <span class="tab-sub">Thumbnail</span>
-      </button>
-    </nav>
+      <!-- Right: Navigation, Theme Toggle, Actions -->
+      <div class="header-actions">
+        <!-- Quick Category Dropdown (Prioritized by highest utility) -->
+        <div class="dropdown-wrap">
+          <button class="btn-header-link" id="btn-cat-dropdown">
+            <span>Categories</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="header-dropdown-menu" id="cat-dropdown-menu">
+            <a href="#cat-text" class="dropdown-item"><span class="drop-icon">🔤</span> Text Tools</a>
+            <a href="#cat-image" class="dropdown-item"><span class="drop-icon">🖼️</span> Image & Photo Tools</a>
+            <a href="#cat-code" class="dropdown-item"><span class="drop-icon">💻</span> Coding Tools</a>
+            <a href="#cat-social" class="dropdown-item"><span class="drop-icon">🚀</span> Social Media Tools</a>
+            <a href="#cat-css" class="dropdown-item"><span class="drop-icon">🎨</span> CSS & Design Tools</a>
+            <a href="#cat-video" class="dropdown-item"><span class="drop-icon">🎬</span> Video & Audio Tools</a>
+          </div>
+        </div>
 
-    <div class="header-status">
-      <span class="status-indicator"></span>
-      <span class="status-text">100% Client-Side</span>
-      <span class="status-pill-badge">Zero Uploads</span>
+        <button class="btn-header-link" id="btn-nav-home">
+          <span>All Tools</span>
+        </button>
+
+        <!-- Light / Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme">
+          <div class="theme-toggle-icon">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </div>
+          <span class="theme-toggle-label" id="theme-label">Light</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Main Container -->
+  <!-- Main Content Container -->
   <main class="app-main">
-    <!-- HOME DASHBOARD: Ultra-Modern Showcase -->
+    <!-- PANEL: Hub Home -->
     <section class="tool-panel active" id="panel-home" role="tabpanel">
-      <div class="home-dashboard">
-
-        <!-- Animated Ambient Orbs -->
-        <div class="home-orbs" aria-hidden="true">
-          <div class="orb orb-1"></div>
-          <div class="orb orb-2"></div>
-          <div class="orb orb-3"></div>
-        </div>
-
-        <!-- Hero Header: Premium Typography -->
-        <div class="home-hero">
-          <div class="hero-version-row">
-            <span class="hero-version-pill">
-              <span class="hero-pulse-dot"></span>
-              v2.0 — Open Source
-            </span>
-            <span class="hero-stat-pill">🛡️ Zero Server Uploads</span>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-container">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>All-In-One Free Creator & Developer Studio</span>
           </div>
-          <h2 class="hero-title">
-            The <span class="hero-gradient-word">Ultimate</span> Viral<br>Creator Toolkit
-          </h2>
+          <h1 class="hero-title">
+            All <strong class="hero-highlight">Online Tools</strong> in “One Box”
+          </h1>
           <p class="hero-subtitle">
-            11 professional-grade tools for video, audio, thumbnails & images — all running 100% client-side in your browser with instant exports.
+            No need to bookmark tools separately. Tools Hub is a 100% free, browser-native toolbox created to ease your workflow with zero server uploads and instant processing.
           </p>
-        </div>
 
-        <!-- Live Search & Category Filter Bar -->
-        <div class="home-filter-section">
-          <div class="home-search-bar">
-            <span class="search-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </span>
-            <input type="text" id="home-search-input" class="home-search-input" placeholder="Search tools — silence stripper, soundboard, mrbeast glow, title scorer...">
-            <kbd class="search-shortcut">⌘K</kbd>
-          </div>
-          <div class="home-category-pills">
-            <button class="cat-pill active" data-cat="all">⚡ All Tools (11)</button>
-            <button class="cat-pill" data-cat="video">🎬 Video & Retention (4)</button>
-            <button class="cat-pill" data-cat="audio">🎙️ Audio & Voice (3)</button>
-            <button class="cat-pill" data-cat="growth">🔥 Packaging & Growth (2)</button>
-            <button class="cat-pill" data-cat="visuals">🎨 Visuals & Memes (2)</button>
+          <!-- Category Filter Pills (Ordered by most useful / highest daily utility) -->
+          <div class="category-pills-bar">
+            <button class="cat-pill active" data-cat="all">All Tools (35+)</button>
+            <button class="cat-pill" data-cat="text">🔤 Text Tools</button>
+            <button class="cat-pill" data-cat="image">🖼️ Image & Photo</button>
+            <button class="cat-pill" data-cat="code">💻 Coding Tools</button>
+            <button class="cat-pill" data-cat="social">🚀 Social Media</button>
+            <button class="cat-pill" data-cat="css">🎨 CSS & Design</button>
+            <button class="cat-pill" data-cat="video">🎬 Video & Audio</button>
           </div>
         </div>
+      </section>
 
-        <!-- Live Stat Counters Row -->
-        <div class="home-stats-row">
-          <div class="stat-box">
-            <span class="stat-number">11</span>
-            <span class="stat-label">Pro Tools</span>
+      <!-- Tools Directory Grid (Prioritized with Most Useful Categories First) -->
+      <div class="tools-directory-container">
+
+        <!-- CATEGORY 1: Text & Typography Tools (Most Popular Daily Utility) -->
+        <section class="tool-category-group" id="cat-text" data-group="text">
+          <div class="category-group-header">
+            <div class="cat-header-title">
+              <span class="cat-hash">#</span>
+              <h2>Text & Typography Tools</h2>
+            </div>
+            <span class="cat-count-badge">2 Studios · 6 Tools · Most Popular</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-box">
-            <span class="stat-number">0</span>
-            <span class="stat-label">Server Uploads</span>
+
+          <div class="tools-cards-grid">
+            <!-- TextForge (#1 Most Opened Daily Tool) -->
+            <div class="tool-card" data-category="text" data-tab="tab-text">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-emerald">🔤</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">CASE & COUNTER</span>
+                  <h3 class="tool-card-title">TextForge Case Converter</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Comprehensive text converter: camelCase, snake_case, Title Case, UPPERCASE, kebab-case. Word, char, line & reading time analyzer with whitespace and HTML tag cleaners.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">10 Casing Modes</span>
+                <span class="mini-tag">Word Counter</span>
+                <span class="mini-tag">Text Cleaner</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- TypoForge -->
+            <div class="tool-card" data-category="text" data-tab="tab-typo">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-purple">✨</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">FANCY FONTS</span>
+                  <h3 class="tool-card-title">TypoForge Unicode Fonts</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                25+ Unicode fonts & decorators for Instagram bios, Discord names & Tweets (𝔹𝕠𝕝𝕕, 𝓢𝓬𝓻𝓲𝓹𝓽, 𝔉𝔯𝔞𝔨𝔱𝔲𝔯, S̶t̶r̶i̶k̶e̶, ꜱᴍᴀʟʟᴄᴀᴘꜱ, ꧁ornaments꧂). 1-click clipboard copy.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">25+ Styles</span>
+                <span class="mini-tag">Bio Decorators</span>
+                <span class="mini-tag">Instant Copy</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-box">
-            <span class="stat-number">4</span>
-            <span class="stat-label">Export Formats</span>
+        </section>
+
+        <!-- CATEGORY 2: Image & Photo Tools -->
+        <section class="tool-category-group" id="cat-image" data-group="image">
+          <div class="category-group-header">
+            <div class="cat-header-title">
+              <span class="cat-hash">#</span>
+              <h2>Image & Photo Tools</h2>
+            </div>
+            <span class="cat-count-badge">4 Studios · 10 Tools</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-box">
-            <span class="stat-number">∞</span>
-            <span class="stat-label">Free Forever</span>
+
+          <div class="tools-cards-grid">
+            <!-- DropStudio -->
+            <div class="tool-card" data-category="image" data-tab="tab-drop">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-emerald">✂️</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">AI REMOVER</span>
+                  <h3 class="tool-card-title">DropStudio BG Remover</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Color-difference background cutout with feathering, edge refinement, chroma keying, solid color fill, gradient backdrops, and high-res transparent PNG downloads.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">Chroma Key</span>
+                <span class="mini-tag">Feathering</span>
+                <span class="mini-tag">PNG Export</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- PixelClean -->
+            <div class="tool-card" data-category="image" data-tab="tab-pixel">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-rose">🧹</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">PHOTO RETOUCH</span>
+                  <h3 class="tool-card-title">PixelClean Object Eraser</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Inpainting brush to erase watermarks, timestamps, and photobombers. Includes HDR auto-enhance, sharpen filter, contrast curve, and dual split-screen comparison.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">Inpainting</span>
+                <span class="mini-tag">Watermarks</span>
+                <span class="mini-tag">HDR Polish</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- ThumbForge -->
+            <div class="tool-card" data-category="image" data-tab="tab-thumb">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-amber">🖼️</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">CTR THUMBNAILS</span>
+                  <h3 class="tool-card-title">ThumbForge Thumbnail Maker</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                High-CTR YouTube and TikTok thumbnail canvas. Bold outlined typography, verified creator badges, sticker overlays, CTR split tester, and 1280x720 PNG export.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">YouTube 16:9</span>
+                <span class="mini-tag">Outlined Text</span>
+                <span class="mini-tag">CTR Split</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- CropMatrix -->
+            <div class="tool-card" data-category="image" data-tab="tab-crop">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-blue">📐</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">MULTI-CROP</span>
+                  <h3 class="tool-card-title">CropMatrix Aspect Cropper</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Multi-platform aspect ratio cropper: 9:16 (Shorts/TikTok), 16:9 (YouTube), 1:1 (IG Square), 4:5 (IG Portrait), 2:1 (Twitter/LinkedIn). Real-time grid overlay & export.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">9:16 & 1:1</span>
+                <span class="mini-tag">Grid Rules</span>
+                <span class="mini-tag">Batch Ratios</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORY 3: Coding & Developer Tools -->
+        <section class="tool-category-group" id="cat-code" data-group="code">
+          <div class="category-group-header">
+            <div class="cat-header-title">
+              <span class="cat-hash">#</span>
+              <h2>Coding & Developer Tools</h2>
+            </div>
+            <span class="cat-count-badge">2 Studios · 6 Tools · High Frequency</span>
+          </div>
+
+          <div class="tools-cards-grid">
+            <!-- CodeForge (Developer Toolkit) -->
+            <div class="tool-card" data-category="code" data-tab="tab-code">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-cyan">💻</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">DEV TOOLKIT</span>
+                  <h3 class="tool-card-title">CodeForge Developer Tools</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Essential utilities for developers: instant URL Encoder/Decoder, UTF-8 Base64 String converter, and JSON Formatter, Minifier & Syntax Validator with syntax alerts.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">URL Encoder</span>
+                <span class="mini-tag">Base64</span>
+                <span class="mini-tag">JSON Validator</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- QRForge -->
+            <div class="tool-card" data-category="code" data-tab="tab-qr">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-amber">📱</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">BRANDED QR</span>
+                  <h3 class="tool-card-title">QRForge Custom Studio</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Create beautiful branded QR codes with center logos (YouTube, Instagram, WiFi, URL), gradient colors, corner eye customization, and high-res vector/PNG downloads.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">Center Logo</span>
+                <span class="mini-tag">Gradients</span>
+                <span class="mini-tag">Hi-Res PNG</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORY 4: Social Media & Growth Tools -->
+        <section class="tool-category-group" id="cat-social" data-group="social">
+          <div class="category-group-header">
+            <div class="cat-header-title">
+              <span class="cat-hash">#</span>
+              <h2>Social Media & Growth Tools</h2>
+            </div>
+            <span class="cat-count-badge">4 Studios · 9 Tools</span>
+          </div>
+
+          <div class="tools-cards-grid">
+            <!-- PostForge -->
+            <div class="tool-card" data-category="social" data-tab="tab-post">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-blue">📱</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">POST MOCKUPS</span>
+                  <h3 class="tool-card-title">PostForge Viral Mockups</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Pixel-perfect social media mockup generator for X/Twitter, Threads, and LinkedIn. Custom avatar, verified badge, likes/retweets counter, dark/light styles, and PNG export.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">Twitter & Threads</span>
+                <span class="mini-tag">LinkedIn</span>
+                <span class="mini-tag">HD PNG</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- ScriptForge -->
+            <div class="tool-card" data-category="social" data-tab="tab-script">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-amber">📜</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">VIRAL HOOKS</span>
+                  <h3 class="tool-card-title">ScriptForge Teleprompter</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                12 viral 3-second hook frameworks (Negative Reverse, Curiosity Gap, Secret Leak). Built-in fullscreen teleprompter with auto-scroll speed controls and speech timer.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">12x Hooks</span>
+                <span class="mini-tag">Teleprompter</span>
+                <span class="mini-tag">WPM Pacing</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- HashForge -->
+            <div class="tool-card" data-category="social" data-tab="tab-hash">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-purple">#️⃣</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">HASHTAG VAULT</span>
+                  <h3 class="tool-card-title">HashForge Hashtags</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Curated hashtag vault for 8 niches (Finance, Tech, Fitness, Food, Travel, Gaming). Balanced 30/40/30 algorithm mix with 1-click platform cap (IG 30, TikTok 5, YouTube 15).
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">8 Niches</span>
+                <span class="mini-tag">Algorithm Mix</span>
+                <span class="mini-tag">1-Click Copy</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- MetaForge -->
+            <div class="tool-card" data-category="social" data-tab="tab-meta">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-cyan">🏷️</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">SEO & PREVIEW</span>
+                  <h3 class="tool-card-title">MetaForge Social Share</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Generate Open Graph and Twitter Card tags with live visual previews of Google SERP, Twitter Cards, and Facebook feeds. Character length audits & copy HTML code.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">Google Preview</span>
+                <span class="mini-tag">OG & Twitter</span>
+                <span class="mini-tag">SEO Length</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORY 5: CSS & Design Tools -->
+        <section class="tool-category-group" id="cat-css" data-group="css">
+          <div class="category-group-header">
+            <div class="cat-header-title">
+              <span class="cat-hash">#</span>
+              <h2>CSS & Design Tools</h2>
+            </div>
+            <span class="cat-count-badge">2 Studios · 5 Tools</span>
+          </div>
+
+          <div class="tools-cards-grid">
+            <!-- ColorForge -->
+            <div class="tool-card" data-category="css" data-tab="tab-color">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-emerald">🎨</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">COLOR STUDIO</span>
+                  <h3 class="tool-card-title">ColorForge Palette Studio</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Upload images to extract dominant palette swatches (HEX, RGB, HSL). Harmonies (complementary, triadic, analogous), CSS gradient generator, and brand kit card download.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">Image Extraction</span>
+                <span class="mini-tag">Color Harmonies</span>
+                <span class="mini-tag">Gradient Code</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- ShadowForge -->
+            <div class="tool-card" data-category="css" data-tab="tab-shadow">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-purple">💎</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">CSS SHADOWS</span>
+                  <h3 class="tool-card-title">ShadowForge CSS Studio</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Visual generator for modern CSS box shadows and frosted glassmorphism backdrops. Interactive sliders for blur, spread, opacity, inset, and 1-click CSS code copy.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">Box Shadow</span>
+                <span class="mini-tag">Glassmorphism</span>
+                <span class="mini-tag">Copy CSS</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CATEGORY 6: Video & Audio Tools -->
+        <section class="tool-category-group" id="cat-video" data-group="video">
+          <div class="category-group-header">
+            <div class="cat-header-title">
+              <span class="cat-hash">#</span>
+              <h2>Video & Audio Tools</h2>
+            </div>
+            <span class="cat-count-badge">2 Studios · 6 Tools</span>
+          </div>
+
+          <div class="tools-cards-grid">
+            <!-- OpusReel -->
+            <div class="tool-card" data-category="video" data-tab="tab-opus">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-purple">🎬</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">VIDEO STUDIO</span>
+                  <h3 class="tool-card-title">OpusReel 9:16 Clipper</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Transform horizontal videos into viral TikTok, Reels & Shorts. Auto-captions, kinetic subtitles, waveform visualizers, split-screen reactor, and direct WebM/MP4 rendering.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">9:16 Auto-Crop</span>
+                <span class="mini-tag">Waveform</span>
+                <span class="mini-tag">Subtitles</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+
+            <!-- AudioMagic -->
+            <div class="tool-card" data-category="video" data-tab="tab-audio">
+              <div class="tool-card-top">
+                <div class="tool-icon-box icon-cyan">🎙️</div>
+                <div class="tool-card-meta">
+                  <span class="card-cat-badge">AUDIO DSP</span>
+                  <h3 class="tool-card-title">AudioMagic Mic & Soundboard</h3>
+                </div>
+              </div>
+              <p class="tool-card-desc">
+                Broadcast vocal processor with 80Hz rumble cut, 350Hz de-mud, speech boost, and low-latency viral soundboard (airhorn, vine thud, bruh, applause) with WAV export.
+              </p>
+              <div class="tool-card-tags">
+                <span class="mini-tag">Mic Polish</span>
+                <span class="mini-tag">12x Soundboard</span>
+                <span class="mini-tag">FFT Canvas</span>
+              </div>
+              <div class="tool-card-footer">
+                <span class="btn-open-tool">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Slim Trust Strip -->
+      <section class="home-trust-strip">
+        <div class="trust-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span><strong>100% Private:</strong> Zero server uploads</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span><strong>Hardware Accelerated:</strong> HTML5 Canvas & Web Audio DSP</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          <span><strong>Always Free:</strong> No logins, paywalls, or limits</span>
+        </div>
+      </section>
+    </section>
+    <!-- TOOL: TextForge (Case Converter, Text Analyzer & Cleaner) -->
+    <section class="tool-panel" id="panel-text" role="tabpanel">
+      <div class="tool-page-header">
+        <div class="tool-breadcrumb">
+          <button class="btn-ghost btn-sm btn-back-hub">← All Tools</button>
+          <span class="crumb-separator">/</span>
+          <span class="crumb-cat">Text Tools</span>
+          <span class="crumb-separator">/</span>
+          <span class="crumb-current">TextForge Studio</span>
+        </div>
+        <div class="tool-header-content">
+          <div class="tool-badge-pill tag-purple">🔤 TEXT SUITE</div>
+          <h2 class="tool-page-title">TextForge — Case Converter & Text Analyzer</h2>
+          <p class="tool-page-desc">Convert casing, count words & characters, measure reading time, and clean messy formatting in real-time.</p>
+        </div>
+      </div>
+
+      <div class="panel-layout">
+        <aside class="panel-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Case Converter</h3>
+            </div>
+            <div class="case-buttons-grid">
+              <button class="btn-ghost btn-sm" data-tf-case="upper">UPPERCASE</button>
+              <button class="btn-ghost btn-sm" data-tf-case="lower">lowercase</button>
+              <button class="btn-ghost btn-sm" data-tf-case="title">Title Case</button>
+              <button class="btn-ghost btn-sm" data-tf-case="sentence">Sentence case</button>
+              <button class="btn-ghost btn-sm" data-tf-case="camel">camelCase</button>
+              <button class="btn-ghost btn-sm" data-tf-case="pascal">PascalCase</button>
+              <button class="btn-ghost btn-sm" data-tf-case="snake">snake_case</button>
+              <button class="btn-ghost btn-sm" data-tf-case="constant">CONSTANT_CASE</button>
+              <button class="btn-ghost btn-sm" data-tf-case="kebab">kebab-case</button>
+              <button class="btn-ghost btn-sm" data-tf-case="alternating">aLtErNaTiNg</button>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Text Cleaner</h3>
+            </div>
+            <div class="clean-buttons-col">
+              <button class="btn-ghost btn-sm btn-block" data-tf-clean="extra-spaces">🧹 Remove Extra Spaces</button>
+              <button class="btn-ghost btn-sm btn-block" data-tf-clean="empty-lines">✂️ Remove Empty Lines</button>
+              <button class="btn-ghost btn-sm btn-block" data-tf-clean="strip-html">🏷️ Strip HTML Tags</button>
+              <button class="btn-ghost btn-sm btn-block" data-tf-clean="dedupe-lines">📑 Deduplicate Lines</button>
+              <button class="btn-ghost btn-sm btn-block" data-tf-clean="sort-az">🔤 Sort Lines (A → Z)</button>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Quick Actions</h3>
+            </div>
+            <div class="btn-row">
+              <button class="btn-primary btn-block" id="btn-tf-copy">📋 Copy Text</button>
+              <button class="btn-ghost btn-sm" id="btn-tf-sample">Load Sample</button>
+              <button class="btn-ghost btn-sm btn-danger" id="btn-tf-clear">Clear</button>
+            </div>
+          </div>
+        </aside>
+
+        <main class="tool-main">
+          <!-- Text Stats Bar -->
+          <div class="text-stats-bar">
+            <div class="stat-pill"><span class="stat-num" id="tf-stat-chars">0</span> <span class="stat-lbl">Characters</span></div>
+            <div class="stat-pill"><span class="stat-num" id="tf-stat-words">0</span> <span class="stat-lbl">Words</span></div>
+            <div class="stat-pill"><span class="stat-num" id="tf-stat-sentences">0</span> <span class="stat-lbl">Sentences</span></div>
+            <div class="stat-pill"><span class="stat-num" id="tf-stat-lines">0</span> <span class="stat-lbl">Lines</span></div>
+            <div class="stat-pill"><span class="stat-num" id="tf-stat-read">0 min</span> <span class="stat-lbl">Read Time</span></div>
+            <div class="stat-pill"><span class="stat-num" id="tf-stat-speak">0 min</span> <span class="stat-lbl">Speak Time</span></div>
+          </div>
+
+          <div class="text-editors-grid">
+            <div class="editor-col">
+              <div class="editor-col-header">
+                <span class="editor-title">Input Text</span>
+              </div>
+              <textarea id="text-forge-input" class="tf-textarea" placeholder="Type or paste your text here to convert or analyze..."></textarea>
+            </div>
+            <div class="editor-col">
+              <div class="editor-col-header">
+                <span class="editor-title">Converted / Cleaned Result</span>
+              </div>
+              <textarea id="text-forge-output" class="tf-textarea" placeholder="Converted result will appear here immediately..." readonly></textarea>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL: CodeForge (URL Encoder/Decoder, Base64 & JSON Formatter) -->
+    <section class="tool-panel" id="panel-code" role="tabpanel">
+      <div class="tool-page-header">
+        <div class="tool-breadcrumb">
+          <button class="btn-ghost btn-sm btn-back-hub">← All Tools</button>
+          <span class="crumb-separator">/</span>
+          <span class="crumb-cat">Coding Tools</span>
+          <span class="crumb-separator">/</span>
+          <span class="crumb-current">CodeForge Toolkit</span>
+        </div>
+        <div class="tool-header-content">
+          <div class="tool-badge-pill tag-cyan">💻 DEVELOPER SUITE</div>
+          <h2 class="tool-page-title">CodeForge — Developer Quick Tools</h2>
+          <p class="tool-page-desc">Blazing fast URL encoder/decoder, UTF-8 Base64 converter, and JSON formatter & validator.</p>
+        </div>
+      </div>
+
+      <div class="subtabs-bar">
+        <button class="subtab-btn active" data-code-subtab="url">🔗 URL Encoder / Decoder</button>
+        <button class="subtab-btn" data-code-subtab="b64">🔤 Base64 Converter</button>
+        <button class="subtab-btn" data-code-subtab="json">{ } JSON Formatter & Validator</button>
+      </div>
+
+      <!-- URL Subpanel -->
+      <div class="code-subpanel active" id="code-subpanel-url">
+        <div class="code-grid">
+          <div class="editor-col">
+            <div class="editor-col-header">
+              <span class="editor-title">Input URL / URI Component</span>
+            </div>
+            <textarea id="cf-url-input" class="tf-textarea" placeholder="https://example.com/search?q=viral creator tools&ref=hub#trending"></textarea>
+            <div class="btn-row mt-3">
+              <button class="btn-primary" id="btn-cf-url-encode">🔒 URL Encode</button>
+              <button class="btn-accent" id="btn-cf-url-decode">🔓 URL Decode</button>
+            </div>
+          </div>
+          <div class="editor-col">
+            <div class="editor-col-header">
+              <span class="editor-title">Encoded / Decoded Result</span>
+              <button class="btn-ghost btn-sm" id="btn-cf-url-copy">📋 Copy</button>
+            </div>
+            <textarea id="cf-url-output" class="tf-textarea" placeholder="Result appears here..." readonly></textarea>
           </div>
         </div>
+      </div>
 
-        <!-- 4-Category Bento Grid -->
-        <div class="home-cards-grid">
-          <!-- Card 1: Video Retention & Social -->
-          <div class="tool-card" data-category="video">
-            <div class="tool-card-glow glow-purple"></div>
-            <div class="card-accent-line accent-purple"></div>
-            <div class="tool-card-header">
-              <div class="tool-card-icon icon-purple">🎬</div>
-              <div>
-                <span class="card-tag tag-purple">VIDEO · 4 TOOLS</span>
-                <h3 class="tool-card-title">OpusReel Studio</h3>
-              </div>
+      <!-- Base64 Subpanel -->
+      <div class="code-subpanel" id="code-subpanel-b64">
+        <div class="code-grid">
+          <div class="editor-col">
+            <div class="editor-col-header">
+              <span class="editor-title">Plain Text / Raw String</span>
             </div>
-            <p class="tool-card-desc">
-              Full suite for short-form retention: 9:16 smart crop, silence stripper jump-cutter, dynamic Hormozi subtitles, teleprompter, and audiograms.
-            </p>
-            <ul class="tool-features-list">
-              <li><span>✓</span> <strong>SilenceStripper</strong>: Auto-cuts dead air pauses for high retention</li>
-              <li><span>✓</span> <strong>Audiogram Studio</strong>: Real-time reactive soundwave bars</li>
-              <li><span>✓</span> <strong>Teleprompter Pro</strong>: Floating transparent scrolling prompter</li>
-              <li><span>✓</span> <strong>OpusReel</strong>: 9:16 reframe & bouncing viral word captions</li>
-            </ul>
-            <button class="btn-card-launch tool-launch-btn" data-launch="tab-opus">
-              <span>Launch Video Suite</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
+            <textarea id="cf-b64-input" class="tf-textarea" placeholder="Hello World! UTF-8 strings are fully supported."></textarea>
+            <div class="btn-row mt-3">
+              <button class="btn-primary" id="btn-cf-b64-encode">🔒 Base64 Encode</button>
+              <button class="btn-accent" id="btn-cf-b64-decode">🔓 Base64 Decode</button>
+            </div>
           </div>
-
-          <!-- Card 2: Audio & Voice Magic -->
-          <div class="tool-card" data-category="audio">
-            <div class="tool-card-glow glow-cyan"></div>
-            <div class="card-accent-line accent-cyan"></div>
-            <div class="tool-card-header">
-              <div class="tool-card-icon icon-cyan">🎙️</div>
-              <div>
-                <span class="card-tag tag-cyan">AUDIO · 3 TOOLS</span>
-                <h3 class="tool-card-title">AudioMagic Studio</h3>
-              </div>
+          <div class="editor-col">
+            <div class="editor-col-header">
+              <span class="editor-title">Base64 Output</span>
+              <button class="btn-ghost btn-sm" id="btn-cf-b64-copy">📋 Copy</button>
             </div>
-            <p class="tool-card-desc">
-              Studio voice dynamics and viral soundboard: EchoKiller speech clarifier, room noise gating, vocal leveler, and 1-tap creator sound effects.
-            </p>
-            <ul class="tool-features-list">
-              <li><span>✓</span> <strong>EchoKiller / Mic Polish</strong>: 350Hz de-mud & 3.5kHz clarity boost</li>
-              <li><span>✓</span> <strong>Vocal Leveler</strong>: Multi-stage studio dynamics compression</li>
-              <li><span>✓</span> <strong>Noise Gate</strong>: Auto-mutes room background hiss</li>
-              <li><span>✓</span> <strong>Viral Soundboard</strong>: Vine Booms, Cha-Ching, Airhorns & Whooshes</li>
-            </ul>
-            <button class="btn-card-launch tool-launch-btn" data-launch="tab-audio">
-              <span>Launch Audio Suite</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </div>
-
-          <!-- Card 3: Viral Packaging & Growth -->
-          <div class="tool-card" data-category="growth">
-            <div class="tool-card-glow glow-amber"></div>
-            <div class="card-accent-line accent-amber"></div>
-            <div class="tool-card-header">
-              <div class="tool-card-icon icon-amber">🔥</div>
-              <div>
-                <span class="card-tag tag-amber">GROWTH · 2 TOOLS</span>
-                <h3 class="tool-card-title">ThumbForge & Scorer</h3>
-              </div>
-            </div>
-            <p class="tool-card-desc">
-              High-CTR thumbnail studio and feed simulator: MrBeast neon outlines, high-impact typography, and live algorithmic viral headline CTR scorer.
-            </p>
-            <ul class="tool-features-list">
-              <li><span>✓</span> <strong>MrBeast Neon Glow</strong>: Multi-layer stroke & aura diffusion</li>
-              <li><span>✓</span> <strong>Viral Title & Hook Scorer</strong>: Live A-F grade & power word check</li>
-              <li><span>✓</span> <strong>Feed Simulator</strong>: YouTube Mobile & Desktop search preview</li>
-              <li><span>✓</span> <strong>TikTok FYP Mode</strong>: 9:16 vertical cover & title check</li>
-            </ul>
-            <button class="btn-card-launch tool-launch-btn" data-launch="tab-thumb">
-              <span>Launch Packaging Suite</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </div>
-
-          <!-- Card 4: Visuals & Meme Studio -->
-          <div class="tool-card" data-category="visuals">
-            <div class="tool-card-glow glow-emerald"></div>
-            <div class="card-accent-line accent-emerald"></div>
-            <div class="tool-card-header">
-              <div class="tool-card-icon icon-emerald">🪄</div>
-              <div>
-                <span class="card-tag tag-emerald">VISUALS · 2 TOOLS</span>
-                <h3 class="tool-card-title">DropStudio & PixelClean</h3>
-              </div>
-            </div>
-            <p class="tool-card-desc">
-              One-click background remover with 3D podium contact shadows, patch diffusion watermark eraser, 1-click HD photo auto-enhancer, and meme generator.
-            </p>
-            <ul class="tool-features-list">
-              <li><span>✓</span> <strong>DropStudio</strong>: 1-click background removal & 3D podium shadow</li>
-              <li><span>✓</span> <strong>PixelClean</strong>: Brush watermark healing & ⚡ Magic HD auto-enhance</li>
-              <li><span>✓</span> <strong>Smart Face Retouch</strong>: Micro-smoothing & portrait contrast boost</li>
-              <li><span>✓</span> <strong>MemeGenerator Pro</strong>: Classic viral top/bottom text overlays</li>
-            </ul>
-            <button class="btn-card-launch tool-launch-btn" data-launch="tab-drop">
-              <span>Launch Visuals Suite</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
+            <textarea id="cf-b64-output" class="tf-textarea" placeholder="Base64 result..." readonly></textarea>
           </div>
         </div>
+      </div>
 
-        <!-- Trust & Performance Banner -->
-        <div class="home-trust-banner">
-          <div class="trust-item">
-            <div class="trust-icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-            <div><strong>100% Private</strong><p>Zero server uploads ever</p></div>
+      <!-- JSON Subpanel -->
+      <div class="code-subpanel" id="code-subpanel-json">
+        <div class="json-actions-bar">
+          <div class="btn-row">
+            <button class="btn-primary btn-sm" id="btn-cf-json-format">✨ Beautify JSON</button>
+            <button class="btn-accent btn-sm" id="btn-cf-json-minify">📦 Minify JSON</button>
+            <button class="btn-ghost btn-sm" id="btn-cf-json-validate">✓ Validate</button>
+            <button class="btn-ghost btn-sm" id="btn-cf-json-sample">Load Sample</button>
           </div>
-          <div class="trust-item">
-            <div class="trust-icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-            <div><strong>Hardware Accelerated</strong><p>Canvas & Web Audio DSP</p></div>
+          <span id="cf-json-status" class="status-badge">Ready</span>
+        </div>
+        <div class="code-grid">
+          <div class="editor-col">
+            <div class="editor-col-header">
+              <span class="editor-title">Raw JSON Input</span>
+            </div>
+            <textarea id="cf-json-input" class="tf-textarea json-textarea" placeholder='{"title":"Tools Hub","status":"online"}'></textarea>
           </div>
-          <div class="trust-item">
-            <div class="trust-icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
-            <div><strong>Instant Processing</strong><p>No waiting, no queues</p></div>
-          </div>
-          <div class="trust-item">
-            <div class="trust-icon-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-            <div><strong>Direct Downloads</strong><p>MP4, WebM & PNG exports</p></div>
+          <div class="editor-col">
+            <div class="editor-col-header">
+              <span class="editor-title">Formatted / Validated Output</span>
+              <button class="btn-ghost btn-sm" id="btn-cf-json-copy">📋 Copy JSON</button>
+            </div>
+            <textarea id="cf-json-output" class="tf-textarea json-textarea" placeholder="Formatted JSON will appear here..." readonly></textarea>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TOOL: AudioMagic (EchoKiller / Mic Polish & Viral Creator Soundboard) -->
+    <!-- TOOL: ShadowForge (CSS Box Shadow & Glassmorphism Studio) -->
+    <section class="tool-panel" id="panel-shadow" role="tabpanel">
+      <div class="tool-page-header">
+        <div class="tool-breadcrumb">
+          <button class="btn-ghost btn-sm btn-back-hub">← All Tools</button>
+          <span class="crumb-separator">/</span>
+          <span class="crumb-cat">CSS Tools</span>
+          <span class="crumb-separator">/</span>
+          <span class="crumb-current">ShadowForge CSS</span>
+        </div>
+        <div class="tool-header-content">
+          <div class="tool-badge-pill tag-emerald">🎨 CSS STUDIO</div>
+          <h2 class="tool-page-title">ShadowForge — CSS Box Shadow & Glassmorphism</h2>
+          <p class="tool-page-desc">Generate production-ready CSS box shadows and modern glassmorphism backdrops with interactive sliders and live preview.</p>
+        </div>
+      </div>
+
+      <div class="subtabs-bar">
+        <button class="subtab-btn active" data-sf-mode="shadow">✨ Box Shadow Generator</button>
+        <button class="subtab-btn" data-sf-mode="glass">💎 Glassmorphism Studio</button>
+      </div>
+
+      <div class="panel-layout">
+        <aside class="panel-sidebar">
+          <!-- Shadow Controls -->
+          <div class="sf-mode-section active" id="sf-section-shadow">
+            <div class="sidebar-card">
+              <div class="card-header">
+                <h3>Presets</h3>
+              </div>
+              <div class="preset-buttons-row">
+                <button class="btn-ghost btn-sm" data-sf-preset="subtle">Subtle</button>
+                <button class="btn-ghost btn-sm" data-sf-preset="elevated">Elevated</button>
+                <button class="btn-ghost btn-sm" data-sf-preset="deep">Deep</button>
+                <button class="btn-ghost btn-sm" data-sf-preset="colored">Neon Glow</button>
+                <button class="btn-ghost btn-sm" data-sf-preset="inner">Inner</button>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <div class="card-header">
+                <h3>Shadow Controls</h3>
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Horizontal Offset (X)</span><span id="sf-val-x">0px</span></div>
+                <input type="range" id="sf-x" min="-60" max="60" value="0" class="control-slider">
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Vertical Offset (Y)</span><span id="sf-val-y">10px</span></div>
+                <input type="range" id="sf-y" min="-60" max="60" value="10" class="control-slider">
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Blur Radius</span><span id="sf-val-blur">25px</span></div>
+                <input type="range" id="sf-blur" min="0" max="100" value="25" class="control-slider">
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Spread Radius</span><span id="sf-val-spread">0px</span></div>
+                <input type="range" id="sf-spread" min="-30" max="60" value="0" class="control-slider">
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Shadow Opacity</span><span id="sf-val-opacity">15%</span></div>
+                <input type="range" id="sf-opacity" min="0" max="100" value="15" class="control-slider">
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Corner Radius</span><span id="sf-val-radius">16px</span></div>
+                <input type="range" id="sf-radius" min="0" max="60" value="16" class="control-slider">
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Shadow Color</span></div>
+                <input type="color" id="sf-color" value="#474bff" class="color-picker-input">
+              </div>
+              <div class="toggle-group mt-2">
+                <label class="toggle-label">
+                  <input type="checkbox" id="sf-inset">
+                  <span class="toggle-slider"></span>
+                  <span>Inset Shadow</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Glass Controls -->
+          <div class="sf-mode-section" id="sf-section-glass">
+            <div class="sidebar-card">
+              <div class="card-header">
+                <h3>Glass Presets</h3>
+              </div>
+              <div class="preset-buttons-row">
+                <button class="btn-ghost btn-sm" data-sf-preset="frosted">Frosted</button>
+                <button class="btn-ghost btn-sm" data-sf-preset="crystal">Crystal</button>
+                <button class="btn-ghost btn-sm" data-sf-preset="heavy">Heavy Glass</button>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <div class="card-header">
+                <h3>Glassmorphism Controls</h3>
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Backdrop Blur</span><span id="sf-val-glass-blur">16px</span></div>
+                <input type="range" id="sf-glass-blur" min="0" max="50" value="16" class="control-slider">
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Transparency</span><span id="sf-val-glass-opacity">40%</span></div>
+                <input type="range" id="sf-glass-opacity" min="5" max="95" value="40" class="control-slider">
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Border Opacity</span><span id="sf-val-glass-border">20%</span></div>
+                <input type="range" id="sf-glass-border" min="0" max="100" value="20" class="control-slider">
+              </div>
+              <div class="control-group">
+                <div class="control-label"><span>Border Radius</span><span id="sf-val-glass-radius">16px</span></div>
+                <input type="range" id="sf-glass-radius" min="0" max="60" value="16" class="control-slider">
+              </div>
+            </div>
+          </div>
+
+          <!-- Copy Button -->
+          <div class="sidebar-card">
+            <button class="btn-primary btn-block" id="btn-sf-copy">📋 Copy CSS Code</button>
+          </div>
+        </aside>
+
+        <main class="tool-main">
+          <!-- Background Selector -->
+          <div class="stage-bg-selector">
+            <span class="stage-bg-label">Preview Background:</span>
+            <button class="bg-opt-btn active" data-sf-bg="mesh">Mesh Gradient</button>
+            <button class="bg-opt-btn" data-sf-bg="light">Light #f8f9fb</button>
+            <button class="bg-opt-btn" data-sf-bg="dark">Dark #0e101d</button>
+            <button class="bg-opt-btn" data-sf-bg="colorful">Vibrant Sunset</button>
+          </div>
+
+          <!-- Interactive Stage -->
+          <div class="sf-preview-stage" id="sf-preview-stage" data-bg="mesh">
+            <div class="sf-preview-box" id="sf-preview-box">
+              <div class="sf-box-content">
+                <div class="sf-box-icon">💎</div>
+                <h4>Tools Hub Studio</h4>
+                <p>Interactive preview element showcasing your custom shadow & glass effects.</p>
+                <div class="sf-badge">Client-Side CSS</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSS Output Code Box -->
+          <div class="sf-code-container">
+            <div class="sf-code-header">
+              <span>CSS Output</span>
+              <span class="sf-code-hint">Click Copy CSS to use in your project</span>
+            </div>
+            <pre class="sf-code-block" id="sf-css-output">/* Box Shadow */
+box-shadow: 0px 10px 25px 0px rgba(71, 75, 255, 0.15);
+border-radius: 16px;</pre>
+          </div>
+        </main>
+      </div>
+    </section>
     <section class="tool-panel" id="panel-audio" role="tabpanel">
       <div class="panel-layout">
         <aside class="panel-sidebar">
@@ -1033,7 +1684,731 @@
         </main>
       </div>
     </section>
+
+    <!-- TOOL: PostForge (Viral Social Post, Tweet & Notification Studio) -->
+    <section class="tool-panel" id="panel-post" role="tabpanel">
+      <div class="panel-layout">
+        <aside class="panel-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>PostForge Mockup Studio</h3>
+              <button class="btn-ghost btn-sm btn-back-hub">← Home</button>
+            </div>
+            <p class="card-desc">Generate 4K studio graphics for viral Twitter/X posts, iOS push alerts, and Reddit story reels.</p>
+            <button class="btn-primary btn-block" id="post-sample-btn">⚡ Load Viral Template Preset</button>
+          </div>
+
+          <!-- Format & Canvas Style -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Format & Canvas Studio</h3>
+            </div>
+            <div class="control-group">
+              <label for="post-type-select">Mockup Format</label>
+              <select id="post-type-select" class="form-select">
+                <option value="tweet" selected>𝕏 Viral Twitter Post</option>
+                <option value="ios">📱 iOS Frosted Glass Notification</option>
+                <option value="reddit">💬 Reddit Viral Story Card</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="post-bg-style">Studio Wallpaper</label>
+              <select id="post-bg-style" class="form-select">
+                <option value="cosmic" selected>🌌 Deep Cosmic Nebula</option>
+                <option value="sunset">🌅 Sunset Blaze Glow</option>
+                <option value="cyber">⚡ Cyberpunk Teal/Neon</option>
+                <option value="emerald">🌲 Emerald Forest</option>
+                <option value="obsidian">🖤 Obsidian Matte Minimal</option>
+                <option value="transparent">🛡️ Transparent PNG (Video Overlay)</option>
+              </select>
+            </div>
+            <div class="toggle-group mt-2">
+              <label class="toggle-label">
+                <input type="checkbox" id="post-tilt-toggle">
+                <span class="toggle-slider"></span>
+                <span>3D Isometric Perspective Tilt</span>
+              </label>
+            </div>
+            <div class="control-group mt-3">
+              <div class="label-row">
+                <label for="post-padding-range">Outer Padding</label>
+                <span id="post-padding-val" class="val-badge">60px</span>
+              </div>
+              <input type="range" id="post-padding-range" min="20" max="100" value="60" class="form-range">
+            </div>
+            <div class="control-group">
+              <div class="label-row">
+                <label for="post-radius-range">Corner Radius</label>
+                <span id="post-radius-val" class="val-badge">24px</span>
+              </div>
+              <input type="range" id="post-radius-range" min="8" max="40" value="24" class="form-range">
+            </div>
+          </div>
+
+          <!-- Tweet Controls -->
+          <div class="sidebar-card" id="post-tweet-controls">
+            <div class="card-header">
+              <h3>Twitter / 𝕏 Post Content</h3>
+            </div>
+            <div class="control-row">
+              <div class="control-group flex-1">
+                <label for="post-tweet-name">Display Name</label>
+                <input type="text" id="post-tweet-name" class="form-input" value="Alex Hormozi">
+              </div>
+              <div class="control-group flex-1">
+                <label for="post-tweet-handle">Handle</label>
+                <input type="text" id="post-tweet-handle" class="form-input" value="@AlexHormozi">
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="post-tweet-badge">Verification Badge</label>
+              <select id="post-tweet-badge" class="form-select">
+                <option value="blue" selected>🔵 Blue Verified</option>
+                <option value="gold">🟡 Gold Organization</option>
+                <option value="none">⚪ None</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="post-tweet-text">Post Text</label>
+              <textarea id="post-tweet-text" class="form-textarea" rows="4">Most people don’t lack motivation.
+
+They lack clarity.
+
+When you know exactly what to do next, you just do it.
+
+Remove friction, define the #1 priority, and execute.</textarea>
+            </div>
+            <div class="control-row">
+              <div class="control-group flex-1">
+                <label for="post-tweet-views">Views Count</label>
+                <input type="text" id="post-tweet-views" class="form-input" value="3.8M">
+              </div>
+              <div class="control-group flex-1">
+                <label for="post-tweet-likes">Likes</label>
+                <input type="text" id="post-tweet-likes" class="form-input" value="64.2K">
+              </div>
+              <div class="control-group flex-1">
+                <label for="post-tweet-retweets">Reposts</label>
+                <input type="text" id="post-tweet-retweets" class="form-input" value="8,940">
+              </div>
+            </div>
+            <div class="control-row mt-2">
+              <div class="control-group flex-1">
+                <label class="btn-ghost btn-sm btn-block upload-label">
+                  <span>Upload Avatar</span>
+                  <input type="file" id="post-avatar-upload" accept="image/*" class="hidden">
+                </label>
+              </div>
+              <div class="control-group flex-1">
+                <label class="btn-ghost btn-sm btn-block upload-label">
+                  <span>Attach Media</span>
+                  <input type="file" id="post-media-upload" accept="image/*" class="hidden">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- iOS Controls -->
+          <div class="sidebar-card hidden" id="post-ios-controls">
+            <div class="card-header">
+              <h3>iOS Push Notification</h3>
+            </div>
+            <div class="control-group">
+              <label for="post-ios-app">App Preset</label>
+              <select id="post-ios-app" class="form-select">
+                <option value="messages">💬 Messages</option>
+                <option value="stripe" selected>💳 Stripe / Banking</option>
+                <option value="tiktok">🎵 TikTok Creator</option>
+                <option value="youtube">▶️ YouTube Studio</option>
+                <option value="cashapp">💵 Cash App</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="post-ios-title">Notification Title</label>
+              <input type="text" id="post-ios-title" class="form-input" value="Stripe · Payment Received 🚀">
+            </div>
+            <div class="control-group">
+              <label for="post-ios-message">Alert Message Body</label>
+              <textarea id="post-ios-message" class="form-textarea" rows="3">You received $4,950.00 USD from Enterprise Client. Payout scheduled for tomorrow.</textarea>
+            </div>
+            <div class="control-group">
+              <label for="post-ios-time">Timestamp</label>
+              <input type="text" id="post-ios-time" class="form-input" value="now">
+            </div>
+          </div>
+
+          <!-- Reddit Controls -->
+          <div class="sidebar-card hidden" id="post-reddit-controls">
+            <div class="card-header">
+              <h3>Reddit Viral Story Card</h3>
+            </div>
+            <div class="control-row">
+              <div class="control-group flex-1">
+                <label for="post-reddit-sub">Subreddit</label>
+                <input type="text" id="post-reddit-sub" class="form-input" value="r/AskReddit">
+              </div>
+              <div class="control-group flex-1">
+                <label for="post-reddit-author">Author</label>
+                <input type="text" id="post-reddit-author" class="form-input" value="u/CuriousThinker">
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="post-reddit-flair">Flair Badge</label>
+              <input type="text" id="post-reddit-flair" class="form-input" value="🔥 Viral Discussion">
+            </div>
+            <div class="control-group">
+              <label for="post-reddit-title">Story / Post Title</label>
+              <input type="text" id="post-reddit-title" class="form-input" value="What is a 1% skill that takes under 48 hours to learn but pays dividends for life?">
+            </div>
+            <div class="control-group">
+              <label for="post-reddit-body">Story Body Text</label>
+              <textarea id="post-reddit-body" class="form-textarea" rows="4">For me, it was learning basic touch-typing without looking at keys and setting up macro keyboard shortcuts. Doubled my daily output overnight. What’s yours?</textarea>
+            </div>
+            <div class="control-group">
+              <label for="post-reddit-upvotes">Upvotes Count</label>
+              <input type="text" id="post-reddit-upvotes" class="form-input" value="52.4k">
+            </div>
+          </div>
+
+          <!-- Export Actions -->
+          <div class="sidebar-card">
+            <button class="btn-primary btn-block mb-2" id="post-download-btn">📥 Download 4K Studio PNG</button>
+            <button class="btn-ghost btn-block" id="post-copy-btn">📋 Copy Image to Clipboard</button>
+          </div>
+        </aside>
+
+        <!-- Preview Viewport -->
+        <main class="panel-preview">
+          <div class="preview-container post-viewport">
+            <div class="post-canvas-container">
+              <canvas id="post-canvas" class="studio-canvas" width="1400" height="1000"></canvas>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL: ScriptForge (120+ Viral Hook Vault & Retention Script Matrix) -->
+    <section class="tool-panel" id="panel-script" role="tabpanel">
+      <div class="panel-layout script-layout">
+        <!-- Left: 120+ Hook Vault -->
+        <aside class="panel-sidebar script-vault-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>120+ Viral Hook Vault</h3>
+              <button class="btn-ghost btn-sm btn-back-hub">← Home</button>
+            </div>
+            <p class="card-desc">Battle-tested high-retention hooks used by MrBeast, Hormozi & top creators. Click any hook to insert.</p>
+            <div class="control-group">
+              <label for="script-hook-cat">Category Filter</label>
+              <select id="script-hook-cat" class="form-select">
+                <option value="all" selected>⚡ All Hook Categories</option>
+                <option value="curiosity">🧠 Curiosity Gap & Open Loops</option>
+                <option value="negative">🚨 Negative Urgency & Loss Aversion</option>
+                <option value="contrarian">🔥 Contrarian & Myth Busters</option>
+                <option value="story">📖 Story Opener & Transformation</option>
+                <option value="action">🎯 Step-by-Step Blueprint</option>
+                <option value="mrbeast">🏆 MrBeast Spectacle / Stakes</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <input type="text" id="script-hook-search" class="form-input" placeholder="Search hooks — secret, stop, money, hack...">
+            </div>
+          </div>
+
+          <!-- Scrollable Vault List -->
+          <div class="hook-vault-container" id="script-hook-list">
+            <!-- Populated via ScriptForge.js -->
+          </div>
+        </aside>
+
+        <!-- Right: 4-Block Script Architecture & Retention Engine -->
+        <main class="panel-preview script-builder-main">
+          <!-- Retention & Virality Dashboard -->
+          <div class="script-pacing-bar">
+            <div class="pacing-metric">
+              <span class="pacing-val" id="script-word-count">0</span>
+              <span class="pacing-lbl">Words</span>
+            </div>
+            <div class="pacing-divider"></div>
+            <div class="pacing-metric">
+              <span class="pacing-val" id="script-time-normal">0s</span>
+              <span class="pacing-lbl">Normal (135wpm)</span>
+            </div>
+            <div class="pacing-divider"></div>
+            <div class="pacing-metric">
+              <span class="pacing-val" id="script-time-engage">0s</span>
+              <span class="pacing-lbl">YouTube (165wpm)</span>
+            </div>
+            <div class="pacing-divider"></div>
+            <div class="pacing-metric highlight-metric">
+              <span class="pacing-val" id="script-time-tiktok">0s</span>
+              <span class="pacing-lbl">TikTok (195wpm)</span>
+            </div>
+            <div class="pacing-divider"></div>
+            <div class="pacing-metric">
+              <span class="pacing-val" id="script-virality-score">50%</span>
+              <span class="pacing-lbl">Virality Score</span>
+            </div>
+            <div class="pacing-metric">
+              <span class="grade-badge grade-b" id="script-virality-grade">B</span>
+              <span class="pacing-lbl">Hook Grade</span>
+            </div>
+          </div>
+
+          <!-- 4 Retention Blocks -->
+          <div class="script-blocks-container">
+            <!-- Block 1: Hook -->
+            <div class="script-block-card block-hook">
+              <div class="block-header">
+                <span class="block-tag tag-hook">BLOCK 1 · 0-3 SECONDS</span>
+                <h4>The Hook (Pattern Interrupt)</h4>
+              </div>
+              <textarea id="script-block-hook" class="script-textarea" rows="2" placeholder="Insert a hook from the vault or write your high-stakes pattern interrupt..."></textarea>
+            </div>
+
+            <!-- Block 2: Stakes -->
+            <div class="script-block-card block-stakes">
+              <div class="block-header">
+                <span class="block-tag tag-stakes">BLOCK 2 · 3-10 SECONDS</span>
+                <h4>The Re-Hook / Stakes (Why Watch Till The End?)</h4>
+              </div>
+              <textarea id="script-block-stakes" class="script-textarea" rows="2" placeholder="Agitate the problem. What happens if they ignore this? Establish asymmetric payoff..."></textarea>
+            </div>
+
+            <!-- Block 3: Value -->
+            <div class="script-block-card block-value">
+              <div class="block-header">
+                <span class="block-tag tag-value">BLOCK 3 · 10-50 SECONDS</span>
+                <h4>The Core Meat / Value Delivery</h4>
+              </div>
+              <textarea id="script-block-value" class="script-textarea" rows="5" placeholder="Step 1, Step 2, Step 3. Deliver actionable clarity with zero fluff or dead air..."></textarea>
+            </div>
+
+            <!-- Block 4: Call to Action -->
+            <div class="script-block-card block-cta">
+              <div class="block-header">
+                <span class="block-tag tag-cta">BLOCK 4 · 50-60 SECONDS</span>
+                <h4>Retention Loop / Call to Action</h4>
+              </div>
+              <textarea id="script-block-cta" class="script-textarea" rows="2" placeholder="Comment [KEYWORD] for the template, save for later, or loop back to the first word..."></textarea>
+            </div>
+          </div>
+
+          <!-- Bottom Actions -->
+          <div class="script-actions-bar">
+            <button class="btn-primary" id="script-send-prompter-btn">🎬 Send To OpusReel Teleprompter</button>
+            <button class="btn-ghost" id="script-copy-btn">📋 Copy Full Script</button>
+            <button class="btn-ghost" id="script-load-preset-btn">⚡ Load Viral Script Template</button>
+            <button class="btn-ghost" id="script-clear-btn">🗑️ Clear</button>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL: QRForge (Aesthetic Creator Gradient QR & Bio Links) -->
+    <section class="tool-panel" id="panel-qr" role="tabpanel">
+      <div class="panel-layout">
+        <aside class="panel-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>QRForge Creator Studio</h3>
+              <button class="btn-ghost btn-sm btn-back-hub">← Home</button>
+            </div>
+            <p class="card-desc">Generate aesthetic dual-tone gradient QR codes with center brand icons for streams, merch, and bio links.</p>
+            <button class="btn-primary btn-block" id="qr-sample-btn">⚡ Load Creator Channel Link</button>
+          </div>
+
+          <!-- Link & Content -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Link / Destination</h3>
+            </div>
+            <div class="control-group">
+              <label for="qr-text-input">Destination URL / Social Handle</label>
+              <input type="text" id="qr-text-input" class="form-input" value="https://tools-hub014.pages.dev">
+            </div>
+          </div>
+
+          <!-- Styling & Colors -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Palette & Dot Styling</h3>
+            </div>
+            <div class="control-group">
+              <label for="qr-shape-select">Module Shape Style</label>
+              <select id="qr-shape-select" class="form-select">
+                <option value="dots" selected>⚪ Smooth Circles (Dots)</option>
+                <option value="rounded">🔲 Rounded Squircles</option>
+                <option value="squares">⬛ Classic Tech Squares</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="qr-preset-select">Gradient Preset</label>
+              <select id="qr-preset-select" class="form-select">
+                <option value="cyber" selected>⚡ Neon Cyber (Cyan to Purple)</option>
+                <option value="sunset">🌅 Sunset Blaze (Amber to Rose)</option>
+                <option value="emerald">🌲 Emerald Mint Glow</option>
+                <option value="gold">👑 Gold Luxury Foil</option>
+                <option value="monochrome">⚪ Monochrome Crisp</option>
+              </select>
+            </div>
+            <div class="control-row">
+              <div class="control-group flex-1">
+                <label for="qr-color-1">Gradient Start</label>
+                <input type="color" id="qr-color-1" class="form-color" value="#06b6d4">
+              </div>
+              <div class="control-group flex-1">
+                <label for="qr-color-2">Gradient End</label>
+                <input type="color" id="qr-color-2" class="form-color" value="#8b5cf6">
+              </div>
+              <div class="control-group flex-1">
+                <label for="qr-bg-color">Canvas BG</label>
+                <input type="color" id="qr-bg-color" class="form-color" value="#07080d">
+              </div>
+            </div>
+            <div class="toggle-group mt-2">
+              <label class="toggle-label">
+                <input type="checkbox" id="qr-transparent-toggle">
+                <span class="toggle-slider"></span>
+                <span>Transparent Background (PNG)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Center Brand Logo -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Embedded Center Logo</h3>
+            </div>
+            <div class="control-group">
+              <label for="qr-logo-select">Brand Icon</label>
+              <select id="qr-logo-select" class="form-select">
+                <option value="youtube" selected>▶️ YouTube Channel</option>
+                <option value="tiktok">🎵 TikTok Profile</option>
+                <option value="instagram">📷 Instagram</option>
+                <option value="twitter">𝕏 Twitter</option>
+                <option value="spotify">🎧 Spotify Podcast / Music</option>
+                <option value="discord">🎮 Discord Server</option>
+                <option value="custom">📁 Custom Logo Upload</option>
+                <option value="none">🚫 No Center Logo</option>
+              </select>
+            </div>
+            <div class="control-group mt-2">
+              <label class="btn-ghost btn-sm btn-block upload-label">
+                <span>Upload Custom Logo (.png/.svg)</span>
+                <input type="file" id="qr-custom-logo" accept="image/*" class="hidden">
+              </label>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="sidebar-card">
+            <button class="btn-primary btn-block mb-2" id="qr-download-png">📥 Download 1000px High-Res PNG</button>
+            <button class="btn-ghost btn-block" id="qr-download-svg">📐 Download Vector SVG</button>
+          </div>
+        </aside>
+
+        <!-- Preview Viewport -->
+        <main class="panel-preview">
+          <div class="preview-container qr-viewport">
+            <div class="qr-canvas-box">
+              <canvas id="qr-canvas" width="1000" height="1000"></canvas>
+            </div>
+            <span class="meta-hint mt-3">⚡ Tested for instant camera scanner detection at high resolution.</span>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL: CropMatrix (1-Click Multi-Platform Resizer & Seamless Carousel Slicer) -->
+    <section class="tool-panel" id="panel-crop" role="tabpanel">
+      <div class="panel-layout">
+        <aside class="panel-sidebar">
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>CropMatrix Studio</h3>
+              <button class="btn-ghost btn-sm btn-back-hub">← Home</button>
+            </div>
+            <p class="card-desc">1-click aspect ratio conversion with smart ambient blur fill, and seamless 3x1 Instagram carousel slicer.</p>
+            <div class="drop-zone mt-2" id="crop-drop-zone">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span>Drop Image Here or Browse</span>
+              <input type="file" id="crop-file-input" accept="image/*" class="hidden">
+            </div>
+            <button class="btn-ghost btn-sm btn-block mt-2" id="crop-sample-btn">⚡ Load Sample Graphic</button>
+          </div>
+
+          <!-- Mode & Format Settings -->
+          <div class="sidebar-card">
+            <div class="card-header">
+              <h3>Aspect Ratio & Mode</h3>
+            </div>
+            <div class="control-group">
+              <label for="crop-mode-select">Processing Mode</label>
+              <select id="crop-mode-select" class="form-select">
+                <option value="single" selected>📐 Single Aspect Ratio</option>
+                <option value="carousel">📲 Instagram 3x1 Seamless Carousel Slicer</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="crop-ratio-select">Target Social Ratio</label>
+              <select id="crop-ratio-select" class="form-select">
+                <option value="9-16" selected>📱 9:16 TikTok / Reel / Short (1080×1920)</option>
+                <option value="16-9">▶️ 16:9 YouTube Landscape (1920×1080)</option>
+                <option value="1-1">🔲 1:1 Instagram Square (1080×1080)</option>
+                <option value="4-5">📸 4:5 Instagram Portrait (1080×1350)</option>
+                <option value="3-1">🐦 3:1 Twitter / X Banner (1500×500)</option>
+                <option value="avatar">👤 1:1 Profile Avatar Circle Guide</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="crop-fit-style">Backdrop & Framing Fill</label>
+              <select id="crop-fit-style" class="form-select">
+                <option value="contain-blur" selected>✨ Ambient Gaussian Blur Fill</option>
+                <option value="cover">🔍 Zoom & Crop to Fill (Cover)</option>
+                <option value="contain-solid">⬛ Solid Obsidian Dark Fill</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <div class="label-row">
+                <label for="crop-blur-amount">Backdrop Blur Strength</label>
+                <span id="crop-blur-val" class="val-badge">25px</span>
+              </div>
+              <input type="range" id="crop-blur-amount" min="5" max="60" value="25" class="form-range">
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="sidebar-card">
+            <button class="btn-primary btn-block mb-2" id="crop-download-btn">📥 Download Selected Format</button>
+            <button class="btn-ghost btn-block" id="crop-download-all-btn">🚀 Batch Download All 5 Social Formats</button>
+          </div>
+        </aside>
+
+        <!-- Preview Viewport -->
+        <main class="panel-preview">
+          <div class="preview-container crop-viewport">
+            <!-- Single Canvas View -->
+            <div class="crop-canvas-box">
+              <canvas id="crop-canvas" width="1080" height="1920"></canvas>
+            </div>
+
+            <!-- Instagram Carousel 3-Slide Slicer View -->
+            <div id="crop-carousel-box" class="carousel-preview-box hidden">
+              <div class="carousel-banner-badge">Instagram 3x1 Seamless Carousel Slicer (Swipe Order Preview)</div>
+              <div id="crop-carousel-slides" class="carousel-slides-grid"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL: TypoForge — Unicode Fancy Text Generator -->
+    <section class="tool-panel" id="panel-typo" role="tabpanel">
+      <div class="tool-layout">
+        <aside class="tool-sidebar">
+          <button class="btn-back-hub">← Hub Home</button>
+          <h2 class="sidebar-title">✨ TypoForge</h2>
+          <p class="sidebar-desc">25+ Unicode font styles & decorators for Instagram bios, tweets, TikTok profiles, and YouTube titles.</p>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Type Your Text</label>
+            <textarea id="typo-input" class="sidebar-textarea" rows="4" placeholder="Type anything here...">Tools Hub</textarea>
+            <span id="typo-char-counter" class="sidebar-meta">9 chars</span>
+          </div>
+          <div class="sidebar-section">
+            <p class="sidebar-hint">👆 Click any card below to instantly copy the styled text to your clipboard.</p>
+          </div>
+        </aside>
+        <main class="tool-main">
+          <div id="typo-output-grid" class="typo-output-grid"></div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL: HashForge — Niche Hashtag Generator -->
+    <section class="tool-panel" id="panel-hash" role="tabpanel">
+      <div class="tool-layout">
+        <aside class="tool-sidebar">
+          <button class="btn-back-hub">← Hub Home</button>
+          <h2 class="sidebar-title">#️⃣ HashForge</h2>
+          <p class="sidebar-desc">Niche-based hashtag sets with proven competition-mix strategy for maximum reach.</p>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Select Niche</label>
+            <select id="hash-niche-select" class="sidebar-select">
+              <option value="finance">💰 Finance & Investing</option>
+              <option value="fitness">💪 Fitness & Health</option>
+              <option value="tech">💻 Tech & Coding</option>
+              <option value="food">🍳 Food & Cooking</option>
+              <option value="beauty">💄 Beauty & Skincare</option>
+              <option value="travel">✈️ Travel & Adventure</option>
+              <option value="gaming">🎮 Gaming & Esports</option>
+              <option value="motivation">🔥 Motivation & Mindset</option>
+            </select>
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Platform</label>
+            <select id="hash-platform-select" class="sidebar-select">
+              <option value="instagram">Instagram (30 max)</option>
+              <option value="tiktok">TikTok (5 max)</option>
+              <option value="youtube">YouTube (15 max)</option>
+            </select>
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Set Size</label>
+            <input id="hash-set-count" type="number" class="sidebar-input" value="30" min="5" max="30">
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Custom Tags (optional)</label>
+            <input id="hash-custom-input" type="text" class="sidebar-input" placeholder="#myBrand #launch">
+          </div>
+          <div class="sidebar-section sidebar-btn-group">
+            <button id="hash-generate-btn" class="btn-primary">🎲 Generate Set</button>
+            <button id="hash-shuffle-btn" class="btn-secondary">🔀 Shuffle</button>
+            <button id="hash-copy-all-btn" class="btn-primary">📋 Copy All</button>
+          </div>
+        </aside>
+        <main class="tool-main">
+          <div class="hash-stats-bar">
+            <span class="hash-stat">Tags: <strong id="hash-tag-count">0</strong></span>
+            <span class="hash-stat">Chars: <strong id="hash-char-count">0</strong></span>
+            <span class="hash-stat-hint">Click a tag to remove it</span>
+          </div>
+          <div id="hash-result-box" class="hash-result-box"></div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL: ColorForge — Brand Palette Extractor -->
+    <section class="tool-panel" id="panel-color" role="tabpanel">
+      <div class="tool-layout">
+        <aside class="tool-sidebar">
+          <button class="btn-back-hub">← Hub Home</button>
+          <h2 class="sidebar-title">🎨 ColorForge</h2>
+          <p class="sidebar-desc">Upload any image to extract a professional brand palette with color harmonies and CSS gradient export.</p>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Upload Image</label>
+            <div id="color-drop-zone" class="drop-zone">
+              <span class="drop-zone-text">📂 Drop image or click to upload</span>
+              <input type="file" id="color-file-input" accept="image/*" hidden>
+            </div>
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Palette Size</label>
+            <select id="color-count-select" class="sidebar-select">
+              <option value="4">4 colors</option>
+              <option value="6" selected>6 colors</option>
+              <option value="8">8 colors</option>
+              <option value="10">10 colors</option>
+            </select>
+          </div>
+          <div class="sidebar-section sidebar-btn-group">
+            <button id="color-copy-gradient" class="btn-secondary">📋 Copy Gradient CSS</button>
+            <button id="color-export-btn" class="btn-primary">📦 Export Brand Kit PNG</button>
+          </div>
+        </aside>
+        <main class="tool-main">
+          <h3 class="section-heading" id="color-palette-label">6 Colors Extracted</h3>
+          <div id="color-palette-grid" class="color-palette-grid"></div>
+          <h3 class="section-heading">CSS Gradient Preview</h3>
+          <div id="color-gradient-preview" class="color-gradient-preview"></div>
+          <code id="color-gradient-css" class="color-gradient-css"></code>
+          <h3 class="section-heading">Color Harmonies</h3>
+          <div id="color-harmony-grid" class="color-harmony-grid"></div>
+        </main>
+      </div>
+    </section>
+
+    <!-- TOOL: MetaForge — SEO Meta Tag Generator -->
+    <section class="tool-panel" id="panel-meta" role="tabpanel">
+      <div class="tool-layout">
+        <aside class="tool-sidebar">
+          <button class="btn-back-hub">← Hub Home</button>
+          <h2 class="sidebar-title">🏷️ MetaForge</h2>
+          <p class="sidebar-desc">Generate all essential SEO meta tags with live previews for Google, Twitter, and Facebook.</p>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Page Title <span id="meta-title-counter" class="meta-counter">0/60</span></label>
+            <input id="meta-title-input" type="text" class="sidebar-input" placeholder="My Awesome Page" value="My Awesome Page">
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Description <span id="meta-desc-counter" class="meta-counter">0/160</span></label>
+            <textarea id="meta-desc-input" class="sidebar-textarea" rows="3" placeholder="A compelling description...">A compelling description of your page content that drives clicks.</textarea>
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Page URL</label>
+            <input id="meta-url-input" type="text" class="sidebar-input" placeholder="https://example.com/page" value="https://example.com/page">
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">OG Image URL</label>
+            <input id="meta-image-input" type="text" class="sidebar-input" placeholder="https://example.com/og-image.jpg">
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Author</label>
+            <input id="meta-author-input" type="text" class="sidebar-input" placeholder="Author name">
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Keywords</label>
+            <input id="meta-keywords-input" type="text" class="sidebar-input" placeholder="seo, tools, web">
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">OG Type</label>
+            <select id="meta-type-select" class="sidebar-select">
+              <option value="website">website</option>
+              <option value="article">article</option>
+              <option value="product">product</option>
+              <option value="profile">profile</option>
+            </select>
+          </div>
+          <div class="sidebar-section">
+            <label class="sidebar-label">Twitter Card</label>
+            <select id="meta-twitter-card" class="sidebar-select">
+              <option value="summary_large_image">summary_large_image</option>
+              <option value="summary">summary</option>
+              <option value="player">player</option>
+            </select>
+          </div>
+          <div class="sidebar-section">
+            <button id="meta-copy-btn" class="btn-primary">📋 Copy All Meta Tags</button>
+          </div>
+        </aside>
+        <main class="tool-main">
+          <h3 class="section-heading">Google Search Preview</h3>
+          <div id="meta-google-preview" class="meta-google-preview"></div>
+          <h3 class="section-heading">Twitter Card Preview</h3>
+          <div id="meta-twitter-preview" class="meta-twitter-preview"></div>
+          <h3 class="section-heading">Facebook / LinkedIn Preview</h3>
+          <div id="meta-fb-preview" class="meta-fb-preview"></div>
+          <h3 class="section-heading">Generated HTML</h3>
+          <pre id="meta-code-output" class="meta-code-output"></pre>
+        </main>
+      </div>
+    </section>
   </main>
+
+  <!-- Smart Slim Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-logo">⚡ Tools Hub</span>
+        <span class="footer-dot">•</span>
+        <span class="footer-tagline">35+ Online Tools</span>
+        <span class="footer-dot">•</span>
+        <span class="footer-badge-pill">100% Private</span>
+      </div>
+
+      <div class="footer-mid">
+        <span class="pulse-indicator"></span>
+        <span class="footer-status-text">Client-Side Engine Active · Zero Cloud Uploads</span>
+      </div>
+
+      <div class="footer-right">
+        <button class="footer-link-btn" id="btn-scroll-top" title="Scroll to Top">
+          <span>Top</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
 
   <!-- Toast Container -->
   <div class="toast-container" id="toast-container"></div>
@@ -1045,6 +2420,17 @@
   <script src="js/drop-studio.js"></script>
   <script src="js/pixel-clean.js"></script>
   <script src="js/thumb-forge.js"></script>
+  <script src="js/post-forge.js"></script>
+  <script src="js/script-forge.js"></script>
+  <script src="js/qr-forge.js"></script>
+  <script src="js/crop-matrix.js"></script>
+  <script src="js/typo-forge.js"></script>
+  <script src="js/hash-forge.js"></script>
+  <script src="js/color-forge.js"></script>
+  <script src="js/meta-forge.js"></script>
+  <script src="js/text-forge.js"></script>
+  <script src="js/code-forge.js"></script>
+  <script src="js/shadow-forge.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,42 +1,50 @@
-# Tools Hub — Viral Creator & AI Studio 
+# Tools Hub — All Online Tools in “One Box” 🚀
 
-> **All-in-one in-browser creator workstation: 100% client-side privacy, zero cloud uploads, GPU Canvas & Web Audio API accelerated.**
+> **All-in-one free browser-native toolbox inspired by [10015.io](https://10015.io): 100% client-side privacy, zero cloud uploads, light & dark mode adaptive design, GPU Canvas & Web Audio API accelerated.**
 
-🌐 **Live Production URL**: [https://tools-hub014.pages.dev](https://tools-hub014.pages.dev)
-
----
-
-## 🚀 Features Overview (11 Creator Tools)
-
-### 1. 🎬 Video Retention & Social
-- **SilenceStripper**: Dead air pause detection and jump-cut skipping for fast-paced TikTok/Reels pacing.
-- **Audiogram Studio**: Real-time soundwave bars and animated progress rings on 9:16 vertical canvas.
-- **SpeedRamp / Velocity Clipper**: Dynamic playback rate velocity switching (0.5x to 2.0x).
-- **Teleprompter Pro**: Floating transparent script drawer with speed-controlled auto-scroll.
-- **OpusReel Core**: 9:16 vertical auto-reframe, animated word-by-word captions, and viral hook banners.
-
-### 2. 🎙️ Audio & Voice Magic (AudioStudio)
-- **EchoKiller / Mic Polish**: Client-side Web Audio DSP dynamics chain (80Hz rumble highpass, 350Hz de-mud, 3.5kHz clarity boost, DynamicsCompressor, noise gate) with live oscilloscope.
-- **Stem & Voice Isolator**: Bandpass voice frequency isolation presets.
-- **Viral Soundboard**: 8 procedural Web Audio synthesized sound effects (Vine Boom, Cha-Ching, Whoosh, Airhorn, Glitch, Ding).
-
-### 3. 🔥 Viral Packaging & Growth
-- **ThumbRater**: Live feed simulator across YouTube Desktop, YouTube Mobile, and TikTok FYP.
-- **Thumbnail Border & Glow Generator**: MrBeast neon subject outlines and radial aura diffusion.
-- **Viral Title & Hook Scorer**: Real-time CTR grade calculator (A+ to C) testing character length, 20+ viral power words, and curiosity brackets.
-
-### 4. 🎨 Visuals & Meme Studio
-- **MemeGenerator Pro**: Classic Impact typography with bold white text, black stroke outline, and auto line-wrapping.
-- **Smart Face Retouch**: In-browser skin tone detection, bilateral-style micro-smoothing, and smile/sclera brightening.
-- **DropStudio & PixelClean**: 1-click subject background removal with 3D product podium contact shadows, and patch diffusion watermark brush inpainter.
+🌐 **Live Production URL**: [https://tools-hub014.pages.dev](https://tools-hub014.pages.dev)  
+⚡ **Local Dev Server**: `http://localhost:8080`
 
 ---
 
-## 🛠️ Tech Stack
-- **Structure**: Vanilla HTML5 (Semantic, Accessible, High CWV)
-- **Styles**: Modern Vanilla CSS (Glassmorphism, Dark Obsidian Studio Palette, Responsive Flex/Grid)
-- **Logic**: Vanilla ES6+ JavaScript modules
-- **Media Engines**: HTML5 Canvas 2D Context & Web Audio API DSP
+## 🎨 10015.io Inspired UI & Light/Dark Mode
+- **Clean 10015.io Design System**: Space Grotesk headings, Manrope body, signature `#474bff` indigo accent, and subtle card elevation shadows.
+- **Light & Dark Mode**: Instant switch between crisp light (`#f8f9fb`) and sleek dark (`#0c0d19`) themes with persistent `localStorage` memory and OS system auto-detection.
+- **Instant Search Bar (⌘K / Ctrl+K)**: Real-time fuzzy filtering of all 35+ tools with keyboard shortcut and quick clear.
+- **Categorized Tool Grid**: Clean categorized sections with hashtag anchors (`# Video & Audio`, `# Image & Photo`, `# Social Media`, `# Text Tools`, `# CSS Tools`, `# Coding Tools`).
+
+---
+
+## 🛠️ Complete Suite of 35+ Tools
+
+### 1. 🎬 Video & Audio Tools
+- **OpusReel 9:16 Clipper**: Auto 9:16 crop, dynamic subtitles, audio waveforms, and video velocity controls.
+- **AudioMagic Mic Polish**: Real-time Web Audio DSP (80Hz rumble highpass, 350Hz de-mud, clarity boost, noise gate).
+- **Viral Soundboard**: 12 low-latency synthesized sounds (airhorn, vine boom, bruh, applause) with WAV export.
+
+### 2. 🖼️ Image & Photo Tools
+- **DropStudio BG Remover**: In-browser edge cutout, chroma keying, solid color and gradient backdrop replacement.
+- **PixelClean Object Eraser**: Interactive inpainting brush for watermarks, timestamps, and photobombers + HDR enhance.
+- **ThumbForge Thumbnail Maker**: High-CTR YouTube and TikTok canvas, verified badges, and split-testing preview.
+- **CropMatrix Aspect Cropper**: Multi-platform ratio cropper (9:16, 16:9, 1:1, 4:5, 2:1) with blurred background fill.
+
+### 3. 🚀 Social Media & Growth Tools
+- **PostForge Mockup Studio**: Pixel-perfect social post generator for X/Twitter, Threads, and LinkedIn with dark/light themes.
+- **ScriptForge Teleprompter**: 120+ viral hook frameworks, speaking timer, and speed-controlled prompter.
+- **HashForge Hashtag Gen**: 8 niche vaults (Finance, Fitness, Tech, Food, Beauty, Travel, Gaming) with 30/40/30 algorithm balance.
+- **MetaForge SEO Studio**: Open Graph and Twitter Card generator with live Google, Twitter, and Facebook feed previews.
+
+### 4. 🔤 Text & Typography Tools
+- **TypoForge Fancy Fonts**: 25+ Unicode font styles (𝔹𝕠𝕝𝕕, 𝓢𝓬𝓻𝓲𝓹𝓽, 𝔉𝔯𝔞𝔨𝔱𝔲𝔯, S̶t̶r̶i̶k̶e̶, ꜱᴍᴀʟʟᴄᴀᴘꜱ, ꧁ornaments꧂).
+- **TextForge Case & Analyzer**: 10 case modes (camelCase, snake_case, Title Case, etc.), word/char/sentence counter, reading time, and text cleaner.
+
+### 5. 🎨 CSS & Design Tools
+- **ColorForge Palette Studio**: Extract color palettes from images, generate harmonies (triadic, complementary), and copy gradient CSS.
+- **ShadowForge CSS Studio**: Visual box shadow and modern glassmorphism generator with live interactive preview and 1-click CSS export.
+
+### 6. 💻 Coding & Developer Tools
+- **CodeForge Developer Toolkit**: Instant URL Encoder/Decoder, UTF-8 Base64 Converter, and JSON Formatter, Minifier & Syntax Validator.
+- **QRForge Branded QR Studio**: Custom QR codes with center logos (YouTube, Instagram, WiFi, URL), gradients, and vector SVG/PNG export.
 
 ---
 
