@@ -1,5 +1,10 @@
 # Tools Hub — All Online Tools in “One Box” 🚀
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-tools--hub014.pages.dev-000000?style=for-the-badge&logo=cloudflarepages&logoColor=white)](https://tools-hub014.pages.dev)
+[![Web Audio](https://img.shields.io/badge/Web_Audio_DSP-Active-blue?style=for-the-badge)](https://tools-hub014.pages.dev)
+[![Privacy](https://img.shields.io/badge/Privacy-100%25_Client--Side-success?style=for-the-badge)](https://tools-hub014.pages.dev)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+
 > **All-in-one free browser-native toolbox inspired by [10015.io](https://10015.io): 100% client-side privacy, zero cloud uploads, light & dark mode adaptive design, GPU Canvas & Web Audio API accelerated.**
 
 🌐 **Live Production URL**: [https://tools-hub014.pages.dev](https://tools-hub014.pages.dev)  
